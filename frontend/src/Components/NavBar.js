@@ -10,7 +10,6 @@ export default function NavBar() {
         width='200px'
       />
       <h1> This is the Navbar</h1>
-      <h1>Broken?</h1>
     </nav>
   );
 }
