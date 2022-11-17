@@ -2,6 +2,7 @@ const express = require("express");
 const foods = express.Router(); //helps us be able to set routes
 const db = require("../db/dbConfig");
 const {
+    getAllFoods,
     getFood,
     deleteFood,
     createFood,
@@ -10,7 +11,7 @@ const {
 
 //INDEX
 foods.get("/", async (req, res) => {
-  const allFoods = await db.any("SELECT * FROM foods");
+  const allFoods = await getAllFoods();
   res.json({ payload: allFoods });
 });
 
