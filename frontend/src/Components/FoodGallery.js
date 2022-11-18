@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Food from './Food';
+import '../Styles/FoodGallery.css';
 
 export default function FoodGallery() {
   const URL = process.env.REACT_APP_API_URL;
