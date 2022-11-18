@@ -1,0 +1,14 @@
+.T4TNavbar{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+background-color: floralwhite;
+
+}
+.NavText{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 0;
+    margin: 20px;
+}
