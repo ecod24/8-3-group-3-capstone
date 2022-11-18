@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <script>curl -X GET --header "Accept: application/json" "https://api.edamam.com/api/recipes/v2?type=public&app_id=314dfd77&app_key=%206549e6c81c5d2629214282d6783afe63%09"</script>
   </React.StrictMode>
 );
 
