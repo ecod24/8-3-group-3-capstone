@@ -12,11 +12,11 @@ app.use(cors());
 app.use("/myfoods", foodsController);
 // ROUTES
 app.get("/", async (request, response) => {
-  response.send("Welcome to Table for Two!");
+	response.send("Welcome to Table for Two!"); //TODO: show possible routes in response message
 });
 app.use("/users", usersController);
 app.get("*", (request, response) => {
-  response.status(404).send("Route error.");
+	response.status(404).send("Route error.");
 });
 // EXPORT
 module.exports = app;
