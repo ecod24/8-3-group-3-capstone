@@ -2,16 +2,17 @@
 const express = require("express");
 const cors = require("cors");
 const usersController = require("./controllers/usersController");
+const foodsController = require("./controllers/foodsController");
 
 // CONFIGURATION
 const app = express();
 app.use(express.json());
 app.use(cors());
 // MIDDLEWARE
-
+app.use("/myfoods", foodsController);
 // ROUTES
 app.get("/", async (request, response) => {
-	response.send("Welcome to Table for Two!");
+	response.send("Welcome to Table for Two!"); //TODO: show possible routes in response message
 });
 app.use("/users", usersController);
 app.get("*", (request, response) => {

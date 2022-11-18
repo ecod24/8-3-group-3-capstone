@@ -1,14 +1,11 @@
 const express = require("express");
-const app = express();
-const RECIPE_API = require("/.env");
+const Recipe = express.Router();
 
-require("dotenv").config();
-
-app.get("/", (req, res) => {
+Recipe.get("/", (req, res) => {
     res.send("Allergen Detection")
 })
 
-app.get("/recipe/search", (req, res) => {
+Recipe.get("/recipe/search", (req, res) => {
     const { health } = req.query;
     const Recipe_Search = recipe.health((RECIPE_API) => {
         return RECIPE_API.health.toLowerCase() === health.toLowerCase();
@@ -21,9 +18,7 @@ app.get("/recipe/search", (req, res) => {
     }
 });
 
-
-
-app.get("/recipe/:indexOfArray", (req, res) => {
+Recipe.get("/recipe/:indexOfArray", (req, res) => {
     const { indexOfArray } = req.params;
     if(Recipe[indexOfArray]){
         res.send(Recipe[indexOfArray]);
