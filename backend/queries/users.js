@@ -87,6 +87,7 @@ const updateUser = async (
 				sexual_orientation,
 				gender,
 				religion,
+				id,
 			]
 		);
 	} catch (error) {
