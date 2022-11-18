@@ -1,4 +1,3 @@
-const usersController = require("../controllers/usersController");
 const db = require("../db/dbConfig.js");
 
 //GET
@@ -20,11 +19,79 @@ const getUser = async (id) => {
 		return error;
 	}
 };
-//TODO: CREATE
-const createUser = async (user) => {};
-//TODO: DELETE
-const deleteUser = async (id) => {};
-//TODO: UPDATE
-const updateUser = async (id) => {};
+//CREATE
+const createUser = async (user) => {
+	try {
+		let {
+			name,
+			image,
+			email,
+			age,
+			dietary_restrictions,
+			food_preferences,
+			sexual_orientation,
+			gender,
+			religion,
+		} = user;
+		return await db.one(
+			"INSERT INTO users (name, image, email, age, dietary_restrictions, food_preferences, sexual_orientation, gender, religion) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+			[
+				name,
+				image,
+				email,
+				age,
+				dietary_restrictions,
+				food_preferences,
+				sexual_orientation,
+				gender,
+				religion,
+			]
+		);
+	} catch (error) {
+		return error;
+	}
+};
+//DELETE
+const deleteUser = async (id) => {
+	try {
+		return await db.one("DELETE FROM users WHERE id=$1 RETURNING *", id);
+	} catch (error) {
+		return error;
+	}
+};
+//UPDATE
+const updateUser = async (
+	id,
+	{
+		name,
+		image,
+		email,
+		age,
+		dietary_restrictions,
+		food_preferences,
+		sexual_orientation,
+		gender,
+		religion,
+	}
+) => {
+	try {
+		return await db.one(
+			"UPDATE users SET name=$1, image=$2, email=$3, age=$4, dietary_restrictions=$5, food_preferences=$6, sexual_orientation=$7, gender=$8, religion=$9 WHERE id=$10 RETURNING *",
+			[
+				name,
+				image,
+				email,
+				age,
+				dietary_restrictions,
+				food_preferences,
+				sexual_orientation,
+				gender,
+				religion,
+			]
+		);
+	} catch (error) {
+		return error;
+	}
+};
 
 module.exports = { getAllUsers, getUser, createUser, deleteUser, updateUser };
