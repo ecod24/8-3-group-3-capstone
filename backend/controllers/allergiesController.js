@@ -9,7 +9,7 @@ const {
   deleteAllergy,
 } = require("../queries/allergies");
 
-//Index
+//INDEX
 allergies.get("/", async (req, res) => {
   const allAllergies = await getAllergies();
   res.json({ payload: allAllergies });
