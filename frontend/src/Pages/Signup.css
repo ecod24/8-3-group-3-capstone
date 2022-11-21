@@ -1,0 +1,45 @@
+h1 {
+    margin-top: 6%;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: Comic-Sans;
+}
+
+.signInDiv {
+    justify-content: center;
+    text-align: center;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+}
+
+.signup {
+    background-color: blueviolet;
+    color:white;
+}
+
+#signUp{
+    width: 100%;
+    text-align: center;
+}
+  
+#signUp > div{
+    margin: 0 auto;
+}
+
+section {
+    height: 100vh;
+  }
+
+#username {
+    background-color: white;
+    color: black;
+}
+
+#password {
+    background-color: white;
+    color: black;
+}
