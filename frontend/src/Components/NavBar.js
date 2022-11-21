@@ -13,10 +13,10 @@ export default function NavBar() {
       />
       </a>
       <Link>
-        <h1 className='NavText'>Profile</h1>
+        <h1 className='NavText'> Profile</h1>
       </Link>
       <Link>
-        <h1 className='NavText'>Sign Up/Login</h1>
+        <h1 className='NavText'> Sign Up/Login</h1>
       </Link>
       <Link>
         <h1 className='NavText'>Contact Us</h1>
