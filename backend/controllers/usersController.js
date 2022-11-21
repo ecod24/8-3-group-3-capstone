@@ -55,7 +55,7 @@ usersController.delete("/:id", async (request, response) => {
 });
 usersController.post("/", async (request, response) => {
 	try {
-		const user = await newUser(request.body);
+		const user = await createUser(request.body);
 		response.json({
 			success: true,
 			payload: user,
