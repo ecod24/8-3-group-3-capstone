@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import FoodsPage from './Pages/FoodsPage.js';
 import HomePage from './Pages/home.js';
 import Nav from './Pages/navbar.js';
+import Recipe from './Pages/Recipe.js';
+import Login from './Pages/Login.js';
+import Signup from './Pages/Signup.js';
 
 import './App.css';
 
@@ -13,6 +16,9 @@ function App() {
         <Routes>
           <Route path='/myfoods' element={<FoodsPage />} />
           <Route path='/users' element={<HomePage />} />
+          <Route path='/recipe' element={<Recipe />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
         </Routes>
       </main>
       <Link className='AboutLink'>
