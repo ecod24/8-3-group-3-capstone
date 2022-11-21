@@ -1,0 +1,12 @@
+#UserDiv{
+display:grid;
+grid-template-columns: 1fr 1fr;
+
+}
+#UserImage{
+    height: 300px;
+    width: 300px;
+    padding:10px;
+    border: 5px dotted black;
+    border-radius: 15%;
+}
