@@ -1,7 +1,7 @@
-import "./Signup.css";
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import Register from "../Components/Signup";
+import "./Signup.css"; 
 
 function Signup() {
   const [user, setUser] = useState({});
@@ -17,25 +17,12 @@ function Signup() {
     document.getElementById("signUp").hidden = false;
   }
 
-  useEffect(()=> {
-    /* global google*/
-    google.accounts.id.initialize({
-      client_id: "255254619189-pvd3mijlap9mniuepp7jmb2065m4ejun.apps.googleusercontent.com",
-      callback: handleCallBackResponse
-  });
-
-    google.accounts.id.renderButton(
-      document.getElementById("signUp"),
-      {theme: "outline", size: "large"}
-    )
-  }, []);
-
   return (
   <div className="signup">
-  <h1>Join us!</h1>
-  <div id="signUp">button</div>
-  <Register />
+  <h1>Already have an account?</h1>
+  <div id="signInDiv" data-onsuccess="onSignIn"><a href="/login"><button>Sign Up</button></a></div>
   <section id="center">
+  <Register />
   </section>
   
 
