@@ -20,3 +20,9 @@ CREATE TABLE foods (
     name TEXT NOT NULL,
     image TEXT NOT NULL
 );
+
+CREATE TABLE allergies (
+    id SERIAL PRIMARY KEY,
+    allergy_type TEXT,
+    user_id INTEGER REFERENCES users(id)
+);
