@@ -19,7 +19,7 @@ export default function SignIn() {
         // Signed in
         const user = userCredential.user;
         if (user) {
-          console.log(`Welcome back ${userProfile.email}`);
+          console.log(`Welcome back ${userProfile.email}!`);
         }
         // ...
       })
