@@ -33,7 +33,7 @@ const createFood = async ({ name, image }) => {
 const updateFood = async (id, { name, image, ...otherStuff }) => {
   try {
     const updateFood = await db.one(
-      "UPDATE foods SET name=$1, image=$2 where id=$3 RETURNING *",
+      "UPDATE foods SET name=$1, image=$2 WHERE id=$3 RETURNING *",
       [name, image, id]
     );
     return updateFood;

@@ -15,6 +15,20 @@ CREATE TABLE users (
     religion TEXT
 );
 
+CREATE TABLE myprofile (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    image TEXT NOT NULL,
+    email TEXT,
+    age INT,
+    dietary_restrictions TEXT,
+    food_preferences TEXT,
+    sexual_orientation TEXT,
+    gender TEXT,
+    religion TEXT,
+    about_me TEXT
+);
+
 CREATE TABLE foods (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,

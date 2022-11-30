@@ -6,6 +6,9 @@ INSERT INTO users (name, image, email, age, dietary_restrictions, food_preferenc
 ('Hermanclyde Guerrero', 'blank image', 'hermanclyde@yahoo.com', 25, 'dietary restrictions here', 'pizza', 'sexual orientation here', 'gender here', 'religion here'),
 ('Charlie Moran', 'blank image', 'charlie@outlook.com', 0, 'dietary restrictions here', 'food prefs here', 'sexual orientation here', 'gender here', 'religion here');
 
+INSERT INTO myprofile (name, image, email, age, dietary_restrictions, food_preferences, sexual_orientation, gender, religion, about_me) VALUES
+('Abdullah Tasfiek', 'blank image', 'abdullah@gmail.com', 25, 'dietary restrictions here', 'food prefs here', 'sexual orientation here', 'gender here', 'religion here', 'I like to eat all kinds of foods from different countries!');
+
 
 INSERT INTO foods (name, image) VALUES
 ('Birria Tacos', 'https://www.swankyrecipes.com/wp-content/uploads/2022/08/Birria-Tacos.jpg'),
