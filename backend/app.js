@@ -4,6 +4,7 @@ const cors = require("cors");
 const usersController = require("./controllers/usersController");
 const foodsController = require("./controllers/foodsController");
 const allergiesController = require("./controllers/allergiesController");
+const recipeController = require("./controllers/recipeController");
 
 // CONFIGURATION
 const app = express();

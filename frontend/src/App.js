@@ -6,6 +6,7 @@ import UserPage from './Pages/UserPage.js';
 import Recipe from './Pages/Recipe.js';
 import Login from './Pages/Login.js';
 import Signup from './Pages/Signup.js';
+import ExpandedUser from './Pages/ExpandedUser.js';
 // import Cleartext from './clearText.js';
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/recipe' element={<Recipe />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/testuser' element={<ExpandedUser />} />
         </Routes>
       </main>
       <Link className='AboutLink'>
