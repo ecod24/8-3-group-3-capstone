@@ -22,7 +22,7 @@ function App() {
           <Route path='/recipe' element={<Recipe />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/testuser' element={<ExpandedUser />} />
+          <Route path='/users/:id' element={<ExpandedUser />} />
         </Routes>
       </main>
       <Link className='AboutLink'>
