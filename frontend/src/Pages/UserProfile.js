@@ -26,6 +26,7 @@ export default function EditableUserProfile({
         <Group>
             <h2>Favourite Color:</h2> <ColorBox color={stored.color}/>
         </Group>
+        <Group><h2>Preffered Foods:</h2></Group>
         <Group>
             <button
                 style={buttonStyle}
