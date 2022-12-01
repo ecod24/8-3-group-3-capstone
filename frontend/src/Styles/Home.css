@@ -4,4 +4,7 @@
     margin: auto;
     border: 1px gray solid;
     background-color: floralwhite;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
 }
