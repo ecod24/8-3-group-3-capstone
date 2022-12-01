@@ -39,6 +39,7 @@ export default function Register() {
         const user = userCredential.user; //creates user
         if (user) {
           console.log(`${userProfile.email} successfully registered`);
+          navigate("/users/new");
         }
       })
       .catch((error) => {

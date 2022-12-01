@@ -32,11 +32,11 @@ function App() {
           <Route path='/signup' element={<Signup />} /> */}
         </Routes>
       </main>
-      <Link className="AboutLink">
+      {/* <Link className="AboutLink">
         <div>
           <h1 className="AboutUs">About Us</h1>
         </div>
-      </Link>
+      </Link> */}
     </BrowserRouter>
   );
 }
