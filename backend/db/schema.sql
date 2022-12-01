@@ -12,7 +12,7 @@ CREATE TABLE users (
     food_preferences TEXT,
     sexual_orientation TEXT,
     gender TEXT,
-    religion TEXT
+    about_me TEXT
 );
 
 CREATE TABLE foods (
