@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import EditProfile from "../Components/EditProfile";
 
 export default function EditPage() {
-  return (
-    <div>EditPage</div>
-  )
+	return (
+		<div>
+			<EditProfile />
+		</div>
+	);
 }
