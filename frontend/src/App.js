@@ -1,14 +1,18 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import FoodsPage from "./Pages/FoodsPage.js";
-import HomePage from "./Pages/home.js";
-import Nav from "./Pages/navbar.js";
-import UserPage from "./Pages/UserPage.js";
-import Recipe from "./Pages/Recipe.js";
-// import Login from './Pages/Login.js';
-// import Signup from './Pages/Signup.js';
-import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import FoodsPage from './Pages/FoodsPage.js';
+import HomePage from './Pages/home.js';
+import Nav from './Pages/navbar.js';
+import UserPage from './Pages/UserPage.js';
+import Recipe from './Pages/Recipe.js';
+import Login from './Pages/Login.js';
+import Signup from './Pages/Signup.js';
+import AboutPage from './Pages/About.js';
+import NewUserPage from './Pages/NewUserPage.js';
+import './App.css';
 import Register from "./Components/Register.js";
 import SignIn from "./Components/SignIn.js";
+import EditPage from "./Pages/EditPage.js";
+
 
 function App() {
   return (
@@ -22,6 +26,8 @@ function App() {
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path='/users/new' element={<NewUserPage />} />
+          <Route path="/users/:id/edit" element={<EditPage/>}/>
           {/* <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} /> */}
         </Routes>
