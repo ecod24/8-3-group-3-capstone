@@ -9,6 +9,10 @@ import Signup from './Pages/Signup.js';
 import AboutPage from './Pages/About.js';
 import NewUserPage from './Pages/NewUserPage.js';
 import './App.css';
+import Register from "./Components/Register.js";
+import SignIn from "./Components/SignIn.js";
+import EditPage from "./Pages/EditPage.js";
+
 
 function App() {
   return (
@@ -16,15 +20,23 @@ function App() {
       <Nav />
       <main>
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/myfoods' element={<FoodsPage />} />
-          <Route path='/users' element={<UserPage />} />
-          <Route path='/recipe' element={<Recipe />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/myfoods" element={<FoodsPage />} />
+          <Route path="/users" element={<UserPage />} />
+          <Route path="/recipe" element={<Recipe />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path='/users/new' element={<NewUserPage />} />
+          <Route path="/users/:id/edit" element={<EditPage/>}/>
+          {/* <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} /> */}
         </Routes>
       </main>
+      <Link className="AboutLink">
+        <div>
+          <h1 className="AboutUs">About Us</h1>
+        </div>
+      </Link>
     </BrowserRouter>
   );
 }
