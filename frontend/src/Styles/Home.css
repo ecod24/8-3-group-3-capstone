@@ -4,4 +4,6 @@
     margin: auto;
     border: 1px gray solid;
     background-color: floralwhite;
+    display: grid;
+    justify-items: center;
 }

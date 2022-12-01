@@ -28,24 +28,17 @@ export default function User({ info }) {
           Sexual Orientation: {info.sexual_orientation}
         </h1>
       </div>
-      <button className="mx-12">
-        <img
-          src={require("../Assets/icons8-cancel-96.png")}
-          alt="Skip"
-          onClick={() => {
-            console.log("I was clicked");
-          }}
-        />
-      </button>
-      <button className="icons">
-        <img
-          src={require("../Assets/icons8-heart-suit-96.png")}
-          alt="Like"
-          onClick={() => {
-            console.log("I was clicked");
-          }}
-        />
-      </button>
+      <div className="flex flex-col items-center">
+        <button className="LikeButton">
+          <img
+            src={require("../Assets/icons8-heart-suit-96.png")}
+            alt="Like"
+            onClick={() => {
+              console.log("I was clicked");
+            }}
+          />
+        </button>
+      </div>
     </div>
   );
 }
