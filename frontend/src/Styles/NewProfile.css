@@ -1,0 +1,25 @@
+.NewUserDiv{
+    border: 2px solid black;
+}
+.NewUserForm{
+    width:100%;
+}
+#FormBlurb{
+    font-family: "Courier New";
+    font-weight: bold;
+}
+#submit{
+    border: 1px solid black;
+    background-color: fuchsia;
+    padding: 10px 10px;
+}
+#newUserSubmitBack{
+    border: 1px solid black;
+    background-color: fuchsia;
+    padding: 10px 10px;
+}
+#buttonDiv{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

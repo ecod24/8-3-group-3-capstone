@@ -15,8 +15,11 @@ export default function NavBar() {
       <Link to={`/users`}>
         <h1 className='NavText'> Profile</h1>
       </Link>
-      <Link to={`/users`}>
-        <h1 className='NavText'> Sign Up/Login</h1>
+      <Link to={'/'}>
+        <h1 className='NavText'>Register</h1>
+      </Link>
+      <Link to={`/users/new`}>
+        <h1 className='NavText'> Sign In</h1>
       </Link>
       <Link>
         <h1 className='NavText'>Contact Us</h1>

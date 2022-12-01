@@ -4,6 +4,9 @@
 #UserDiv:hover {
     transform: scale(1.05)
 }
+.UserTable{
+    background-color: floralwhite;
+}
 
 #UserImage{
     height: 350px;
