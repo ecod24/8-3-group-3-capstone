@@ -15,7 +15,7 @@ export default function UserProfile() {
   }, [URL]);
   return (
     <div className='LandingDiv'>
-      <table>
+      <table className='UserTable'>
         <tbody>
           {users.map((user) => {
             return <User info={user} key={user.name} />;

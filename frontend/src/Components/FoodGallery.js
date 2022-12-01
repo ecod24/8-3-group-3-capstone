@@ -16,12 +16,9 @@ export default function FoodGallery() {
   return (
     <div id='FoodGallery'>
       <table id='FoodTable'>
-        <tr>
-          <th>Allergic?</th>
-          <th>Favorite?</th>
-          <th>Name</th>
-          <th>Thumbnail</th>
-        </tr>
+        <strong>
+          <h1> Table of Foods</h1>
+        </strong>
         <tbody id='FoodTableContents'>
           {foods.map((food) => {
             return <Food key={food.name} info={food} />;

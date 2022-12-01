@@ -6,6 +6,8 @@ import UserPage from './Pages/UserPage.js';
 import Recipe from './Pages/Recipe.js';
 import Login from './Pages/Login.js';
 import Signup from './Pages/Signup.js';
+import AboutPage from './Pages/About.js';
+import NewUserPage from './Pages/NewUserPage.js';
 import './App.css';
 
 function App() {
@@ -20,13 +22,9 @@ function App() {
           <Route path='/recipe' element={<Recipe />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/users/new' element={<NewUserPage />} />
         </Routes>
       </main>
-      <Link className='AboutLink'>
-        <div>
-          <h1 className='AboutUs'>About Us</h1>
-        </div>
-      </Link>
     </BrowserRouter>
   );
 }
