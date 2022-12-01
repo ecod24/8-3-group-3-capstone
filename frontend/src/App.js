@@ -9,6 +9,7 @@ import Recipe from "./Pages/Recipe.js";
 import "./App.css";
 import Register from "./Components/Register.js";
 import SignIn from "./Components/SignIn.js";
+import EditPage from "./Pages/EditPage.js";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/users/:id/edit" element={<EditPage/>}/>
           {/* <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} /> */}
         </Routes>
