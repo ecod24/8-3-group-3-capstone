@@ -120,12 +120,12 @@ export default function NewProfile() {
           />
           <label htmlFor='religion'>About You:</label>
           <textarea
-            id='religion'
+            id='About'
             className='NewUserForm'
-            type='religion'
+            type='About'
             rows='3'
             cols='30'
-            value={profile.religion}
+            value={profile.about_me}
             onChange={handleTextChange}
             placeholder='Tell Us About Yourself.'
           />
