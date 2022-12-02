@@ -13,7 +13,7 @@ export default function NavBar() {
 				/>{" "}
 			</Link>
 			<Link to={`/users`}>
-				<h1 className="NavText"> Profile</h1>
+				<h1 className="NavText"> Users</h1>
 			</Link>
 			<Link to={"/register"}>
 				<h1 className="NavText">Register</h1>

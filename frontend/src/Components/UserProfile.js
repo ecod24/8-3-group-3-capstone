@@ -4,15 +4,62 @@ import { useState, useEffect } from "react";
 import User from "./User";
 import "../Styles/Home.css";
 
+/**
+ * capitalizes first letter and no trailing spaces in string given.
+ * @param {string} word word to be normalized.
+ * @returns string of normalized word
+ */
+const normalizeOneWord = (word) => {
+	//trim spaces on outside first
+	word = word.trim();
+	word = word.split("");
+	word[0] = word[0].toUpperCase();
+	for (let i = 1; i < word.length; i++) {
+		word[i] = word[i].toLowerCase();
+	}
+	return word.join("");
+};
+
+/**
+ * normalizes a comma separated list of words
+ * @param {string} words comma separarted string of words to be normalized
+ */
+const normalizeListOfWords = (words) => {
+	// trim any edges of the string
+	// split string into array of comma separated thingies
+	return words
+		.trim()
+		.split(",")
+		.map((word) => {
+			return normalizeOneWord(word);
+		})
+		.join(", ")
+		.trim();
+	// call normalizeOneWord() on each entry
+	// join normalized words in a comma separated string and return
+};
+
 export default function UserProfile() {
 	const URL = process.env.REACT_APP_API_URL;
 	const [users, setUsers] = useState([]);
+	const [currentFilter, setCurrentFilter] = useState("");
+
 	useEffect(() => {
 		axios
-			.get(`localhost:3003/users`)
+			.get(`${URL}/users`)
 			.then((res) => setUsers(res.data.payload))
 			.catch((err) => console.log(err.message.payload));
 	}, [URL]);
+
+	let dietary_restrictions = []; //a list of unique dietary restrictions to filter by. 
+	users.forEach((user) => {
+		let listOfRestrictions = normalizeListOfWords(user).split(",");
+		listOfRestrictions.forEach((restriction) => {
+			if (!dietary_restrictions.includes(restriction)) {
+				dietary_restrictions.push(restriction);
+			}
+		});
+	});
 	return (
 		<div className="LandingDiv">
 			{users.map((user) => {
