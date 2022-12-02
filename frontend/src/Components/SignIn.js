@@ -21,7 +21,7 @@ export default function SignIn() {
         // Signed in
         const user = userCredential.user;
         if (user) {
-          console.log(`Welcome back ${userProfile.email}!`);
+          alert(`Welcome back ${userProfile.email}!`); //TODO: consider a modal window here.
           navigate("/users");
         }
         // ...

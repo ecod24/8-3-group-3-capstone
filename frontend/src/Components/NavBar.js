@@ -21,8 +21,8 @@ export default function NavBar() {
 			<Link to={`/signin`}>
 				<h1 className="NavText"> Sign In</h1>
 			</Link>
-			<Link>
-				<h1 className="NavText">Contact Us</h1>
+			<Link to={`/about`}>
+				<h1 className="NavText">About Us</h1>
 			</Link>
 		</nav>
 	);
