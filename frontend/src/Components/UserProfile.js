@@ -43,23 +43,26 @@ export default function UserProfile() {
 	const URL = process.env.REACT_APP_API_URL;
 	const [users, setUsers] = useState([]);
 	const [currentFilter, setCurrentFilter] = useState("");
+	let dietary_restrictions = []; //a list of unique dietary restrictions to filter by.
+	const uniqueRestrictions = () => {
+		//make a list of unique restrictions to filter by.
+		users.forEach((user) => {
+			let listOfRestrictions = normalizeListOfWords(user).split(",");
+			listOfRestrictions.forEach((restriction) => {
+				if (!dietary_restrictions.includes(restriction)) {
+					dietary_restrictions.push(restriction);
+				}
+			});
+		});
+	};
 
 	useEffect(() => {
 		axios
 			.get(`${URL}/users`)
 			.then((res) => setUsers(res.data.payload))
-			.catch((err) => console.log(err.message.payload));
+			.catch((err) => console.warn(err.message.payload));
 	}, [URL]);
 
-	let dietary_restrictions = []; //a list of unique dietary restrictions to filter by. 
-	users.forEach((user) => {
-		let listOfRestrictions = normalizeListOfWords(user).split(",");
-		listOfRestrictions.forEach((restriction) => {
-			if (!dietary_restrictions.includes(restriction)) {
-				dietary_restrictions.push(restriction);
-			}
-		});
-	});
 	return (
 		<div className="LandingDiv">
 			{users.map((user) => {
