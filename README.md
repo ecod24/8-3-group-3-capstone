@@ -4,11 +4,11 @@ Group members: Abdullah, Hermanclyde, Edwin, Charlie
 
 ## Important Links
 
-- [Deployed API Server] (https://table-for-two.onrender.com/)
-- [Deployed Frontend] (https://table-for-two.netlify.app/)
-- [ERD] (https://drive.google.com/drive/folders/1S2l0gP1wxIgHZh-hbcnVaepB_tTjI9XI?usp=sharing)
-- [Wireframes] (https://drive.google.com/drive/folders/11DC6EPNxv3BIedICKvRV54irdkBUtvnw?usp=sharing)
-- [Systems Design Diagram](https://drive.google.com/drive/folders/1S9DzbMLmLuV-5K3-BPzRSH-1QX7ARX5G?usp=sharing)
+- [Deployed API Server](https://table-for-two.onrender.com/)
+- [Deployed Frontend](https://table-for-two.netlify.app/)
+- [ERD](https://miro.com/welcomeonboard/YnVXSnZvTlhwb2F3QTBraUpRNk5yY3c4NE80ejV1Tkk0aEd4QklTWmpwUGdxYWViQ0VjZWdRcDl2V2I3azRLU3wzNDU4NzY0NTE2MDUxNjI4OTA0fDI=?share_link_id=967288889386)
+- [Wireframes](https://drive.google.com/drive/folders/11DC6EPNxv3BIedICKvRV54irdkBUtvnw?usp=sharing)
+- [Systems Design Diagram](https://miro.com/welcomeonboard/NTNEMWFlUWkwem5JN1g3Q1FGdFpNam9lajQwelFmM1FvaWFuMzYzOTFDMFNUZVBJS0FjaE45UmhKSUY0b3k4Z3wzNDU4NzY0NTE2MDUxNjI4OTA0fDI=?share_link_id=836752356988)
 
 ## Overview
 Find your potential partner through your diet! Table For Two is a web application that allows users to find a partner based on ones diet. Food is an important part of a relationship so this project helps people match with a partner who has their preferred diet or eats similar foods.
