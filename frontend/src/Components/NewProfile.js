@@ -7,7 +7,7 @@ const URL = process.env.REACT_APP_API_URL;
 
 export default function NewProfile() {
   let navigate = useNavigate();
-  const [profile, createUser] = useState({
+  const [profile, setProfile] = useState({
     name: '',
     image: '',
     email: '',
@@ -16,7 +16,7 @@ export default function NewProfile() {
     food_preferences: '',
     sexual_orientation: '',
     gender: '',
-    religion: '',
+    about_me: '',
   });
 
   const newUser = (profile) => {
@@ -29,7 +29,7 @@ export default function NewProfile() {
   };
 
   const handleTextChange = (event) => {
-    createUser({ ...profile, [event.target.id]: event.target.value });
+    setProfile({ ...profile, [event.target.id]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -58,7 +58,7 @@ export default function NewProfile() {
             type='text'
             value={profile.image}
             onChange={handleTextChange}
-            placeholder='File Name for Profile Pic'
+            placeholder='https://.......jpg'
             required
           />
           <label htmlFor='email'>New User Email:</label>
@@ -118,11 +118,11 @@ export default function NewProfile() {
             onChange={handleTextChange}
             placeholder='Enter Your Gender'
           />
-          <label htmlFor='religion'>About You:</label>
+          <label htmlFor='about_me'>About You:</label>
           <textarea
-            id='About'
+            id='about_me'
             className='NewUserForm'
-            type='About'
+            type='about_me'
             rows='3'
             cols='30'
             value={profile.about_me}
