@@ -1,5 +1,7 @@
 .LandingBlurb{
-
+    background-image: url(../Assets/Marble2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     max-width: 70%;
     height: 100%;
     margin: auto;

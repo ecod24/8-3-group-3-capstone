@@ -64,7 +64,7 @@ export default function UserProfile() {
   }, [URL]);
 
   return (
-    <div className='LandingDiv'>
+    <div className='UserGallery'>
       {users.map((user) => {
         return <User info={user} key={`${user.id}-${user.name}`} />;
       })}
