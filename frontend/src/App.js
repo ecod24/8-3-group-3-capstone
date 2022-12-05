@@ -4,6 +4,8 @@ import HomePage from './Pages/home.js';
 import Nav from './Pages/navbar.js';
 import UserPage from './Pages/UserPage.js';
 import Recipe from './Pages/Recipe.js';
+import ExpandedUser from './Pages/ExpandedUser.js';
+// import Cleartext from './clearText.js';
 // import Login from "./Pages/Login.js";
 // import Signup from "./Pages/Signup.js";
 import AboutPage from './Pages/About.js';
@@ -31,6 +33,9 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/users/new' element={<NewUserPage />} />
+          <Route path='/users/:id' element={<ExpandedUser />} />
+          {/* <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} /> */}
           <Route path='/users/:id/edit' element={<EditPage API={API} />} />
           {/* <Route path="/users/:id" element={<></>} />//a show page, eventually */}
         </Routes>
