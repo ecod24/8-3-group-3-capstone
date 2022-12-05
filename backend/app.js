@@ -4,6 +4,7 @@ const cors = require("cors");
 const usersController = require("./controllers/usersController");
 const foodsController = require("./controllers/foodsController");
 const allergiesController = require("./controllers/allergiesController");
+const likesController = require("./controllers/likesController");
 const recipeController = require("./controllers/recipeController");
 
 // CONFIGURATION
@@ -15,13 +16,14 @@ app.use("/myfoods", foodsController);
 app.use("/recipe", recipeController)
 // ROUTES
 app.get("/", async (request, response) => {
-	response.send("Welcome to Table for Two!"); //TODO: show possible routes in response message
+  response.send("Welcome to Table for Two!"); //TODO: show possible routes in response message
 });
 app.use("/myfoods", foodsController);
 app.use("/users", usersController);
 app.use("/allergies", allergiesController);
+app.use("/likes", likesController);
 app.get("*", (request, response) => {
-	response.status(404).send("Route error.");
+  response.status(404).send("Route error.");
 });
 // EXPORT
 module.exports = app;
