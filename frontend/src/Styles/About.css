@@ -1,8 +1,22 @@
+#AboutDiv{
+    justify-items: center;
+}
+#AboutSect{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 30px;
+}
+.AboutUs{
+    font-weight: Bold;
+    font-style: oblique;
+  
+}
 .GithubIcon{
-    height: 1%;
-    width: 1%;
+    height: 5%;
+    width: 5%;
 }
 .LinkedInIcon{
-    height: 1%;
-    width: 1%;
+    height: 5%;
+    width: 5%;
 }
+
