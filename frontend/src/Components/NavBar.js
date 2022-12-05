@@ -1,29 +1,54 @@
 import { Link } from "react-router-dom";
 import "../Styles/NavBar.css";
 
+
 export default function NavBar() {
-	return (
-		<nav className="T4TNavbar">
-			<Link to={`/`}>
-				<img
-					src={require("../Assets/TableForTwoLogo.png")}
-					alt="Logo For Table For Two"
-					height="144px"
-					width="200px"
-				/>{" "}
-			</Link>
-			<Link to={`/users`}>
-				<h1 className="NavText"> Users</h1>
-			</Link>
-			<Link to={"/register"}>
-				<h1 className="NavText">Register</h1>
-			</Link>
-			<Link to={`/signin`}>
-				<h1 className="NavText"> Sign In</h1>
-			</Link>
-			<Link to={`/about`}>
-				<h1 className="NavText">About Us</h1>
-			</Link>
-		</nav>
-	);
+    const menu = document.querySelector(".menu");
+    const closeIcon= document.querySelector(".closeIcon");
+    const menuIcon = document.querySelector(".menuIcon");
+
+      function toggleMenu() {
+        if (menu.classList.contains("showMenu")) {
+          menu.classList.remove("showMenu");
+          closeIcon.style.display = "none";
+          menuIcon.style.display = "block";
+          } else {
+          menu.classList.add("showMenu");
+          closeIcon.style.display = "block";
+          menuIcon.style.display = "none";
+        }
+      }
+
+        return (
+    <nav className='T4TNavbar'>
+      <Link to={`/`}>
+        <img
+          src={require('../Assets/TableForTwoLogo.png')}
+          alt='Logo For Table For Two'
+          height='144px'
+          width='200px'
+        />{' '}
+      </Link>
+    <ul class="menu">
+    <Link to={`/users`}><li><a class="burger" href="#">Profile</a></li></Link>
+    <Link to={'/'}><li><a class="burger" href="#">Register</a></li></Link>
+    <Link to={`/users/new`}><li><a class="burger" href="#">Sign In</a></li></Link>
+    <Link><li><a class="burger" href="#">Contact us</a></li></Link>
+    </ul>
+    <button class="hamburger" onClick={toggleMenu}>
+    <i class="menuIcon"><img
+          src={require('../Assets/Hamburger.png')}
+          alt='Hamburger'
+          height='50px'
+          width='100px'
+        />menu</i>
+    <i class="closeIcon"><img
+          src={require('../Assets/Hamburger.png')}
+          alt='Hamburger'
+          height='50px'
+          width='100px'
+        />close</i>
+  </button>``
+    </nav>
+  );
 }
