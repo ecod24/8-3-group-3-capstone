@@ -1,8 +1,10 @@
 import React from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
+  const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState({
     email: "",
     password: "",
@@ -19,7 +21,8 @@ export default function SignIn() {
         // Signed in
         const user = userCredential.user;
         if (user) {
-          console.log(`Welcome back ${userProfile.email}!`);
+          alert(`Welcome back ${userProfile.email}!`); //TODO: consider a modal window here.
+          navigate("/users");
         }
         // ...
       })
