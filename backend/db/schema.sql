@@ -17,7 +17,8 @@ CREATE TABLE users (
 
 CREATE TABLE likes (
     id SERIAL PRIMARY KEY,
-    liked_id TEXT
+    liked_id INT REFERENCES users(id) NOT NULL,
+    liker_id INT REFERENCES users(id) NOT NULL
 );
 
 CREATE TABLE foods (
