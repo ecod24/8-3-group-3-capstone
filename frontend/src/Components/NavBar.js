@@ -28,38 +28,38 @@ export default function NavBar() {
           width="200px"
         />{" "}
       </Link>
-      <ul className="menu">
+      <ul class="menu">
         <Link to={`/users`}>
           <li>
-            <a className="burger" href="#">
-              Profile
+            <a class="burger" href="#">
+              Profile Discovery
             </a>
           </li>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/register"}>
           <li>
-            <a className="burger" href="#">
+            <a class="burger" href="#">
               Register
             </a>
           </li>
         </Link>
-        <Link to={`/users/new`}>
+        <Link to={`/signin`}>
           <li>
-            <a className="burger" href="#">
+            <a class="burger" href="#">
               Sign In
             </a>
           </li>
         </Link>
-        <Link>
+        <Link to="about">
           <li>
-            <a className="burger" href="#">
+            <a class="burger" href="#">
               Contact us
             </a>
           </li>
         </Link>
       </ul>
-      <button className="hamburger" onClick={toggleMenu}>
-        <i className="menuIcon">
+      <button class="hamburger" onClick={toggleMenu}>
+        <i class="menuIcon">
           <img
             src={require("../Assets/3075977.png")}
             alt="Hamburger"
@@ -68,7 +68,7 @@ export default function NavBar() {
           />
           menu
         </i>
-        <i className="closeIcon">
+        <i class="closeIcon">
           <img
             src={require("../Assets/3075977.png")}
             alt="Hamburger"
@@ -78,7 +78,6 @@ export default function NavBar() {
           close
         </i>
       </button>
-      ``
     </nav>
   );
 }
