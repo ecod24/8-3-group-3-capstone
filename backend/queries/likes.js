@@ -10,6 +10,21 @@ const getAllLikes = async () => {
   }
 };
 
+//GET
+const getMatches = async (current_liker_id, match_user_id) => {
+  try {
+    console.log("Hitting requestMatch query");
+    console.log("current-user", current_liker_id, "match-user", match_user_id);
+    const sendMatchRequest = await db.one(
+      "SELECT * FROM likes WHERE liked_id = $1",
+      match_user_id
+    );
+    return sendMatchRequest;
+  } catch (error) {
+    console.log("Error from sendMatchRequest query");
+  }
+};
+
 //GET:id
 const getLike = async (id) => {
   try {
@@ -53,4 +68,4 @@ const deleteLike = async (id) => {
   }
 };
 
-module.exports = { getAllLikes, getLike, createLike, deleteLike };
+module.exports = { getAllLikes, getLike, createLike, deleteLike, getMatches };

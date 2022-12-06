@@ -4,6 +4,7 @@ const {
   createLike,
   getLike,
   deleteLike,
+  getMatches,
 } = require("../queries/likes");
 const likesController = express();
 
@@ -47,6 +48,24 @@ likesController.get("/:id", async (request, response) => {
       success: false,
       id: id,
       payload: `Error: no user found with ID ${id}.`,
+    });
+  }
+});
+
+likesController.get("/matches", async (req, res) => {
+  const { liker_id, liked_id } = req.body;
+  const match = await getMatches(liker_id, liked_id);
+  console.log("are we getting these?: ", liker_id, liked_id);
+  console.log("from statusMatch controller");
+  if (match) {
+    res.status(200).json({
+      success: true,
+      payload: match,
+    });
+  } else {
+    res.status(404).json({
+      success: false,
+      payload: `Page not found.`,
     });
   }
 });
