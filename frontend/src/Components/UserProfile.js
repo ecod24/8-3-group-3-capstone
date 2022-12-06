@@ -1,8 +1,8 @@
-import axios from 'axios';
-import '../Styles/UserProfile.css';
-import { useState, useEffect } from 'react';
-import User from './User';
-import '../Styles/UserProfiles.css';
+import axios from "axios";
+import "../Styles/UserProfile.css";
+import { useState, useEffect } from "react";
+import User from "./User";
+import "../Styles/UserProfiles.css";
 
 /**
  * capitalizes first letter and no trailing spaces in string given.
@@ -56,18 +56,33 @@ export default function UserProfile() {
 		});
 	};
 
-  useEffect(() => {
-    axios
-      .get(`${URL}/users`)
-      .then((res) => setUsers(res.data.payload))
-      .catch((err) => console.warn(err.message.payload));
-  }, [URL]);
+	useEffect(() => {
+		axios
+			.get(`${URL}/users`)
+			.then((res) => {
+				setUsers(res.data.payload);
+				uniqueRestrictions();
+			})
+			.catch((err) => console.warn(err.message.payload));
+	}, [URL]);
 
-  return (
-    <div className='UserGallery'>
-      {users.map((user) => {
-        return <User info={user} key={`${user.id}-${user.name}`} />;
-      })}
-    </div>
-  );
+	return (
+		<div className="UserGallery">
+			<h3>Filter By:</h3>
+			{dietary_restrictions.map((restriction) => {
+				return <button onClick={() => setCurrentFilter(restriction)}>{restriction}</button>;
+			})}
+			{users
+				.filter((user) => {
+					if (!currentFilter) {
+						return true;
+					} else {
+						return user.dietary_restrictions.includes(currentFilter);
+					}
+				})
+				.map((user) => {
+					return <User info={user} key={`${user.id}-${user.name}`} />;
+				})}
+		</div>
+	);
 }
