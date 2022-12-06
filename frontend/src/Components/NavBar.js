@@ -28,38 +28,38 @@ export default function NavBar() {
           width="200px"
         />{" "}
       </Link>
-      <ul class="menu">
+      <ul className="menu">
         <Link to={`/users`}>
           <li>
-            <a class="burger" href="#">
+            <a className="burger" href="#">
               Profile
             </a>
           </li>
         </Link>
         <Link to={"/"}>
           <li>
-            <a class="burger" href="#">
+            <a className="burger" href="#">
               Register
             </a>
           </li>
         </Link>
         <Link to={`/users/new`}>
           <li>
-            <a class="burger" href="#">
+            <a className="burger" href="#">
               Sign In
             </a>
           </li>
         </Link>
         <Link>
           <li>
-            <a class="burger" href="#">
+            <a className="burger" href="#">
               Contact us
             </a>
           </li>
         </Link>
       </ul>
-      <button class="hamburger" onClick={toggleMenu}>
-        <i class="menuIcon">
+      <button className="hamburger" onClick={toggleMenu}>
+        <i className="menuIcon">
           <img
             src={require("../Assets/3075977.png")}
             alt="Hamburger"
@@ -68,7 +68,7 @@ export default function NavBar() {
           />
           menu
         </i>
-        <i class="closeIcon">
+        <i className="closeIcon">
           <img
             src={require("../Assets/3075977.png")}
             alt="Hamburger"

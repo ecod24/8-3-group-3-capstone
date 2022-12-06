@@ -1,0 +1,20 @@
+.signin{
+    display: grid;
+    grid-template-columns: 1;
+    justify-content: center;
+}
+
+.signinbutton {
+    background-color: #F09C4E;
+}
+
+p {
+    text-align: center;
+}
+
+div.copyright {
+    display: grid;
+    grid-template-columns: 1;
+    justify-content:center;
+    margin-top:41vh;
+}
