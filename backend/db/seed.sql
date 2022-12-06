@@ -8,10 +8,8 @@ INSERT INTO users (name, image, email, age, dietary_restrictions, food_preferenc
 ('Jessica Terry', 'https://this-person-does-not-exist.com/img/avatar-a64476ddbbdaa1c22d020b442e9800ae.jpg', 'jt101015@gmail.com', 23, 'Lactose Intolerant', 'Dumplings, Shrimp Cocktail, Ice Cream', 'Straight', 'Female', 'Although I am lactose, its never stopped me in the past from enjoying really good food, dairy or not.'),
 ('Lani Thomas', 'https://this-person-does-not-exist.com/img/avatar-3711db93213e6809aefa83847dcec927.jpg', 'lanithom@outlook.com', 29, 'Kosher, Gluten Free', 'Fried Chicken', 'Bisexual', 'Female', 'I am celiac and cannot process gluten. I found a new love for food discovering how to make things delicious without the need for gluten!');
 
-INSERT INTO likes (liked_id, liker_id) VALUES
-(2, 1),
-(5, 1),
-(6, 1);
+INSERT INTO likes (liker_id, liked_id) VALUES
+(1, 2);
 
 INSERT INTO foods (name, image) VALUES
 ('Birria Tacos', 'https://www.swankyrecipes.com/wp-content/uploads/2022/08/Birria-Tacos.jpg'),

@@ -7,9 +7,8 @@
 
 
 body{
-  background-color: Plum;
+  background-color: #5E1745;
   max-height: 100%;
-  background-image: url(./Assets/vibrating-hearts2.gif);
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -24,7 +23,7 @@ body{
 }
 
 body{
-  background-color: #DDA0DD;
+  background-color: #EADDCA;
 }
 
 @media (prefers-reduced-motion: no-preference) {
