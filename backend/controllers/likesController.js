@@ -1,11 +1,26 @@
 const express = require("express");
 const {
   getAllLikes,
-  getLike,
   createLike,
+  getLike,
   deleteLike,
 } = require("../queries/likes");
 const likesController = express();
+
+likesController.post("/", async (req, res) => {
+  console.log("POST/ you are creating a like");
+  const { body } = req;
+  const matchRequest = await createLike(body.liker_id, body.liked_id);
+  matchRequest
+    ? res.json({
+        success: true,
+        payload: matchRequest,
+      })
+    : res.status(404).send({
+        success: false,
+        payload: "/this match is not found/",
+      });
+});
 
 likesController.get("/", async (request, response) => {
   const allLikes = await getAllLikes();
@@ -56,17 +71,6 @@ likesController.delete("/:id", async (request, response) => {
       success: false,
       payload: deletedLike,
     });
-  }
-});
-likesController.post("/", async (request, response) => {
-  try {
-    const like = await createLike(request.body);
-    response.json({
-      success: true,
-      payload: like,
-    });
-  } catch (error) {
-    return error;
   }
 });
 

@@ -13,28 +13,41 @@ const getAllLikes = async () => {
 //GET:id
 const getLike = async (id) => {
   try {
-    const like = await db.one("SELECT * FROM users WHERE id=$1", id);
+    const like = await db.one("SELECT * FROM likes WHERE id=$1", id);
     return like;
   } catch (error) {
     return error;
   }
 };
+
 //CREATE
-const createLike = async (like) => {
+const createLike = async (current_liker_id, current_match_id) => {
   try {
-    let { liked_id, liker_id } = like;
-    return await db.one(
-      "INSERT INTO likes (liked_id, liker_id) VALUES ($1, $2) RETURNING *",
-      [liked_id, liker_id]
+    console.log("Hitting createLike query");
+    console.log(
+      "current-user",
+      current_liker_id,
+      "match-user",
+      current_match_id
     );
+    const createMatchRequest = await db.one(
+      "INSERT INTO likes (liker_id, liked_id) VALUES ($1, $2) RETURNING *",
+      [current_liker_id, current_match_id]
+    );
+    return createMatchRequest;
   } catch (error) {
-    return error;
+    console.log("Error from createMatchRequest query");
   }
 };
+
 //DELETE
 const deleteLike = async (id) => {
   try {
-    return await db.one("DELETE FROM likes WHERE id=$1 RETURNING *", id);
+    const deletedLike = await db.one(
+      "DELETE FROM likes WHERE id=$1 RETURNING *",
+      id
+    );
+    return deletedLike;
   } catch (error) {
     return error;
   }
