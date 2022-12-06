@@ -1,9 +1,9 @@
-.signin{
+.register{
     display: grid;
     justify-content: center;
 }
 
-.signinbutton {
+.registerbutton {
     background-color: #5D1744;
 }
 

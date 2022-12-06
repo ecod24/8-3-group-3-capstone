@@ -61,7 +61,7 @@ export default function NavBar() {
       <button class="hamburger" onClick={toggleMenu}>
         <i class="menuIcon">
           <img
-            src={require("../Assets/3075977.png")}
+            src={require("../Assets/Hamburger.png")}
             alt="Hamburger"
             height="50px"
             width="100px"
@@ -70,7 +70,7 @@ export default function NavBar() {
         </i>
         <i class="closeIcon">
           <img
-            src={require("../Assets/3075977.png")}
+            src={require("../Assets/Hamburger.png")}
             alt="Hamburger"
             height="50px"
             width="100px"

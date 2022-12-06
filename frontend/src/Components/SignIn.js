@@ -47,7 +47,7 @@ export default function SignIn() {
         </p>
         <br></br>
         <input
-          className="text-sm font-semibold inline-block py-4 px-5 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
+          className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
           type="text"
           id="email"
           placeholder="Email"
@@ -55,7 +55,7 @@ export default function SignIn() {
         />
         <br></br>
         <input
-          className="text-sm font-semibold inline-block py-4 px-5 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
+          className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
           placeholder="Password"
           type="password"
           id="password"
