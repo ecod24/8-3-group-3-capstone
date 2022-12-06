@@ -17,8 +17,11 @@ CREATE TABLE users (
 
 CREATE TABLE likes (
     id SERIAL PRIMARY KEY,
-    liked_id INT REFERENCES users(id) NOT NULL,
-    liker_id INT REFERENCES users(id) NOT NULL
+    liker_id INT REFERENCES users(id) NOT NULL,
+    liked_id INT REFERENCES users(id) NOT NULL
+    -- request_status INTEGER DEFAULT 0,
+    -- date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    -- date_accepted TIMESTAMP DEFAULT NULL
 );
 
 CREATE TABLE foods (
