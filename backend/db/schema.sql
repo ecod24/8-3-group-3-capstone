@@ -15,6 +15,12 @@ CREATE TABLE users (
     about_me TEXT
 );
 
+CREATE TABLE likes (
+    id SERIAL PRIMARY KEY,
+    liked_id INT REFERENCES users(id) NOT NULL,
+    liker_id INT REFERENCES users(id) NOT NULL
+);
+
 CREATE TABLE foods (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,

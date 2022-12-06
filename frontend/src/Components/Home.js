@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
-
 import '../Styles/Home.css';
 
 export default function Home() {
   return (
-    <div className='LandingDiv'>
+    <div className='LandingBlurb'>
       <Link className='LandingLink' to='/'>
         <h1>Welcome to Table for Two!</h1>
       </Link>

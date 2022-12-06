@@ -1,8 +1,8 @@
-import axios from "axios";
-import "../Styles/UserProfile.css";
-import { useState, useEffect } from "react";
-import User from "./User";
-import "../Styles/Home.css";
+import axios from 'axios';
+import '../Styles/UserProfile.css';
+import { useState, useEffect } from 'react';
+import User from './User';
+import '../Styles/UserProfiles.css';
 
 /**
  * capitalizes first letter and no trailing spaces in string given.
@@ -56,18 +56,18 @@ export default function UserProfile() {
 		});
 	};
 
-	useEffect(() => {
-		axios
-			.get(`${URL}/users`)
-			.then((res) => setUsers(res.data.payload))
-			.catch((err) => console.warn(err.message.payload));
-	}, [URL]);
+  useEffect(() => {
+    axios
+      .get(`${URL}/users`)
+      .then((res) => setUsers(res.data.payload))
+      .catch((err) => console.warn(err.message.payload));
+  }, [URL]);
 
-	return (
-		<div className="LandingDiv">
-			{users.map((user) => {
-				return <User info={user} key={`${user.id}-${user.name}`} />;
-			})}
-		</div>
-	);
+  return (
+    <div className='UserGallery'>
+      {users.map((user) => {
+        return <User info={user} key={`${user.id}-${user.name}`} />;
+      })}
+    </div>
+  );
 }

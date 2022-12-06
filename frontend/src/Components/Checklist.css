@@ -1,0 +1,20 @@
+.filterbtn {
+    column-count: 1;
+    column-span: 1;
+    justify-content: left;
+    float: left;
+    background-color: white;
+}
+
+#filterbox {
+    display: none;
+    column-count: 1;
+    column-span: 1;
+    justify-content: left;
+    float: left;
+}
+
+#filterdiv {
+    column-count: 1;
+    column-span: 1;
+}
