@@ -9,7 +9,7 @@ import "../Styles/Home.css";
  * @param {string} word word to be normalized.
  * @returns string of normalized word
  */
-const normalizeOneWord = (word) => {
+const normalizeOneEntry = (word) => {
 	//trim spaces on outside first
 	word = word.trim();
 	word = word.split("");
@@ -31,11 +31,11 @@ const normalizeListOfWords = (words) => {
 		.trim()
 		.split(",")
 		.map((word) => {
-			return normalizeOneWord(word);
+			return normalizeOneEntry(word);
 		})
 		.join(", ")
 		.trim();
-	// call normalizeOneWord() on each entry
+	// call normalizeOneEntry() on each entry
 	// join normalized words in a comma separated string and return
 };
 
@@ -47,7 +47,7 @@ export default function UserProfile() {
 	const uniqueRestrictions = () => {
 		//make a list of unique restrictions to filter by.
 		users.forEach((user) => {
-			let listOfRestrictions = normalizeListOfWords(user).split(",");
+			let listOfRestrictions = normalizeListOfWords(user.dietary_restrictions).split(",");
 			listOfRestrictions.forEach((restriction) => {
 				if (!dietary_restrictions.includes(restriction)) {
 					dietary_restrictions.push(restriction);
