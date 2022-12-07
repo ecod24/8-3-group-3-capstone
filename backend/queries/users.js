@@ -41,9 +41,10 @@ const createUser = async (user) => {
 			gender,
 			about_me,
 			firebase_id,
+			chat_handle,
 		} = user;
 		return await db.one(
-			"INSERT INTO users (name, image, email, age, dietary_restrictions, food_preferences, sexual_orientation, gender, about_me, firebase_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
+			"INSERT INTO users (name, image, email, age, dietary_restrictions, food_preferences, sexual_orientation, gender, about_me, firebase_id, chat_handle) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *",
 			[
 				name,
 				image,
@@ -55,6 +56,7 @@ const createUser = async (user) => {
 				gender,
 				about_me,
 				firebase_id,
+				chat_handle,
 			]
 		);
 	} catch (error) {
@@ -83,11 +85,12 @@ const updateUser = async (
 		gender,
 		about_me,
 		firebase_id,
+		chat_handle,
 	}
 ) => {
 	try {
 		return await db.one(
-			"UPDATE users SET name=$1, image=$2, email=$3, age=$4, dietary_restrictions=$5, food_preferences=$6, sexual_orientation=$7, gender=$8, about_me=$9, firebase_id=$10 WHERE id=$11 RETURNING *",
+			"UPDATE users SET name=$1, image=$2, email=$3, age=$4, dietary_restrictions=$5, food_preferences=$6, sexual_orientation=$7, gender=$8, about_me=$9, firebase_id=$10, chat_handle=$11 WHERE id=$12 RETURNING *",
 			[
 				name,
 				image,
@@ -99,6 +102,7 @@ const updateUser = async (
 				gender,
 				about_me,
 				firebase_id,
+				chat_handle,
 				id,
 			]
 		);

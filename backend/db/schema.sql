@@ -13,7 +13,8 @@ CREATE TABLE users (
     sexual_orientation TEXT,
     gender TEXT,
     about_me TEXT,
-    firebase_id TEXT
+    firebase_id TEXT,
+    chat_handle TEXT
 );
 
 CREATE TABLE likes (
