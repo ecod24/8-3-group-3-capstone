@@ -2,6 +2,7 @@ import UserProfile from "../Components/UserProfile.js";
 import Checklist from "../Components/Checklist.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 /**
  * capitalizes first letter and no trailing spaces in string given.
@@ -70,6 +71,11 @@ export default function UserPage() {
 		<section>
 			<Checklist setCurrentFilter={setCurrentFilter} restrictions={dietary_restrictions} />
 			<UserProfile currentFilter={currentFilter} users={users} />
+			<Link to="/">
+				<button className="backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full">
+					Back to Home Page
+				</button>
+			</Link>
 		</section>
 	);
 }

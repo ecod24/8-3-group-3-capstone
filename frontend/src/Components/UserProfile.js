@@ -1,8 +1,9 @@
-import axios from "axios";
-import "../Styles/UserProfile.css";
-import { useState, useEffect } from "react";
-import User from "./User";
-import "../Styles/UserProfiles.css";
+import axios from 'axios';
+import '../Styles/UserProfile.css';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import User from './User';
+import '../Styles/UserProfiles.css';
 
 
 export default function UserProfile({currentFilter, users}) {

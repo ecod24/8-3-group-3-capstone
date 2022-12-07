@@ -1,6 +1,8 @@
 #UserDiv{
     transition: transform .3s ease-in-out;
     /* margin-left: 370px; */
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 #UserDiv:hover {
     transform: scale(1.05)
