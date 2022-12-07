@@ -178,7 +178,20 @@ export default function NewProfile() {
             onChange={handleTextChange}
             placeholder="Tell Us About Yourself."
           />
-          <br></br>
+          <label
+            htmlFor="chat_handle"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Chat Handle {" "}
+          </label>
+          <input
+            id="chat_handle"
+            className="NewUserForm text-sm font-semibold inline-block py-4 px-4 rounded-full text-white bg-pink-200 last:mr-0 mr-1"
+            type="text"
+            value={profile.chat_handle}
+            onChange={handleTextChange}
+            placeholder="Add your handle from a chatting service like Messenger, WhatsApp, Kik... etc"
+          />
           <div id="buttonDiv">
             <input
               type="submit"
@@ -186,18 +199,6 @@ export default function NewProfile() {
               value="Submit"
               className="hover:cursor-pointer"
             />
-          </div>
-          <label htmlFor="chat_handle">Chat Handle:</label>
-          <input
-            id="chat_handle"
-            className="NewUserForm"
-            type="text"
-            value={profile.chat_handle}
-            onChange={handleTextChange}
-            placeholder="Add your handle from a chatting service like Messenger, WhatsApp, Kik... etc"
-          />
-          <div id="buttonDiv">
-            <input type="submit" id="submit" value="Submit" />
 
             <br />
             <Link to={"/"}>
