@@ -37,7 +37,7 @@ export default function NewProfile() {
   };
 
   return (
-    <>
+    <div className="RegisterForm">
       <h1
         id="FormBlurb"
         className="font-fonts text-rose-700 text-5xl font-semibold content-center"
@@ -46,87 +46,130 @@ export default function NewProfile() {
       </h1>
       <div className="NewUserDiv">
         <form onSubmit={handleSubmit} className="NewUserForm">
-          <label htmlFor="name">New User Name:</label>
+          <label
+            htmlFor="name"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Name{" "}
+          </label>
           <input
             id="name"
-            className="NewUserForm"
+            className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-white last:mr-0 mr-1"
             type="text"
             value={profile.name}
             onChange={handleTextChange}
             placeholder="Enter Your Name"
             required
           />
-          <label htmlFor="image">File Name for User Pic</label>
+          <label
+            htmlFor="image"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Profile Picture{" "}
+          </label>
           <input
             id="image"
-            className="NewUserForm"
+            className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-white bg-pink-200 last:mr-0 mr-1"
             type="text"
             value={profile.image}
             onChange={handleTextChange}
             placeholder="https://.......jpg"
             required
           />
-          <label htmlFor="email">New User Email:</label>
+          <label
+            htmlFor="email"
+            className="email font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Email{" "}
+          </label>
           <input
             id="email"
-            className="NewUserForm"
+            className="emails text-sm font-semibold inline-block py-4 px-4 rounded-full text-white bg-pink-200 last:mr-0 mr-1"
             type="text"
             value={profile.email}
             onChange={handleTextChange}
             placeholder="Enter Your Email"
           />
-          <label htmlFor="age">New User Age:</label>
+          <label
+            htmlFor="age"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Age{" "}
+          </label>
           <input
             id="age"
-            className="NewUserForm"
+            className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-white bg-pink-200 last:mr-0 mr-1"
             type="number"
             value={profile.age}
             onChange={handleTextChange}
             placeholder="Enter Your Age"
           />
 
-          <label htmlFor="Dietary Restrictions">Dietary Restrictions:</label>
+          <label
+            htmlFor="Dietary Restrictions"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Dietary Restrictions{" "}
+          </label>
           <textarea
-            id="Dietary Restrictions"
-            className="NewUserForm"
+            id="Dietary_Restrictions"
+            className="text-sm font-semibold rounded-full text-white"
             rows="3"
             cols="30"
             placeholder="Enter your allergies and food restrictions, each one seperated by a
             ','."
           ></textarea>
 
-          <label htmlFor="Food Restrictions">Preferred Foods:</label>
+          <label
+            htmlFor="Food Restrictions"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Favorite Foods{" "}
+          </label>
           <textarea
-            id="Food Restrictions"
-            className="NewUserForm"
+            id="Food_Restrictions"
+            className="text-sm font-semibold rounded-full text-white resize-x-10"
             rows="3"
             cols="30"
             placeholder="Enter your favorite foods, each one seperated by a ','."
           ></textarea>
-          <label htmlFor="sexual_orientation">
-            New User Sexual Orientation:
+          <label
+            htmlFor="sexual_orientation"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Sexual Orientation
           </label>
           <input
             id="sexual_orientation"
-            className="NewUserForm"
+            className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-white bg-pink-200 last:mr-0 mr-1"
             type="text"
             value={profile.sexual_orientation}
             onChange={handleTextChange}
             placeholder="Enter Your Sexual Orientation"
           />
-          <label htmlFor="gender">Gender:</label>
+          <label
+            htmlFor="gender"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            Gender{" "}
+          </label>
           <input
             id="gender"
-            className="NewUserForm"
+            className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-white bg-pink-200 last:mr-0 mr-1"
             type="text"
             value={profile.gender}
             onChange={handleTextChange}
             placeholder="Enter Your Gender"
           />
-          <label htmlFor="about_me">About You:</label>
+          <label
+            htmlFor="about_me"
+            className="font-fonts text-3xl font-semibold text-rose-700"
+          >
+            About Me
+          </label>
           <textarea
             id="about_me"
-            className="NewUserForm"
+            className="text-sm font-semibold rounded-full text-white"
             type="about_me"
             rows="3"
             cols="30"
@@ -134,8 +177,14 @@ export default function NewProfile() {
             onChange={handleTextChange}
             placeholder="Tell Us About Yourself."
           />
+          <br></br>
           <div id="buttonDiv">
-            <input type="submit" id="submit" value="Submit" />
+            <input
+              type="submit"
+              id="submit"
+              value="Submit"
+              className="hover:cursor-pointer"
+            />
 
             <br />
             <Link to={"/"}>
@@ -144,6 +193,6 @@ export default function NewProfile() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
