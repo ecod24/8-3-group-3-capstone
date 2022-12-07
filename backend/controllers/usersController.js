@@ -1,5 +1,12 @@
 const express = require("express");
-const { getAllUsers, getUser, updateUser, createUser, deleteUser } = require("../queries/users");
+const {
+	getAllUsers,
+	getUser,
+	getUserByFirebase,
+	updateUser,
+	createUser,
+	deleteUser,
+} = require("../queries/users");
 const usersController = express();
 
 usersController.get("/", async (request, response) => {
@@ -11,6 +18,23 @@ usersController.get("/", async (request, response) => {
 		});
 	} else {
 		response.status(500).json();
+	}
+});
+//GET by firebase id
+usersController.get("/firebase/:id", async (request, response) => {
+	const { id } = request.params;
+	const user = await getUserByFirebase(id);
+	if (user.id) {
+		response.status(200).json({
+			success: true,
+			payload: user,
+		});
+	} else {
+		response.status(404).json({
+			success: false,
+			id: id,
+			payload: `Error: no user found with Firebase ID ${id}.`,
+		});
 	}
 });
 

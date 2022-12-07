@@ -9,7 +9,6 @@ const {
 const likesController = express();
 
 likesController.post("/", async (req, res) => {
-  console.log("POST/ you are creating a like");
   const { body } = req;
   const matchRequest = await createLike(body.liker_id, body.liked_id);
   matchRequest
@@ -35,6 +34,26 @@ likesController.get("/", async (request, response) => {
   }
 });
 
+likesController.get("/matches", async (req, res) => {
+	//get those who liked user with id liked_id
+	const { liked_id } = req.body;
+	const match = await getMatches(liked_id);
+	console.log("are we getting these?: ", liked_id);
+	console.log("from statusMatch controller");
+	if (match) {
+		res.status(200).json({
+			success: true,
+			payload: match,
+		});
+	} else {
+		res.status(404).json({
+			success: false,
+			payload: `Page not found.`,
+		});
+	}
+});
+
+
 likesController.get("/:id", async (request, response) => {
   const { id } = request.params;
   const like = await getLike(id);
@@ -52,27 +71,11 @@ likesController.get("/:id", async (request, response) => {
   }
 });
 
-likesController.get("/matches", async (req, res) => {
-  const { liker_id, liked_id } = req.body;
-  const match = await getMatches(liker_id, liked_id);
-  console.log("are we getting these?: ", liker_id, liked_id);
-  console.log("from statusMatch controller");
-  if (match) {
-    res.status(200).json({
-      success: true,
-      payload: match,
-    });
-  } else {
-    res.status(404).json({
-      success: false,
-      payload: `Page not found.`,
-    });
-  }
-});
 
-likesController.delete("/:id", async (request, response) => {
-  const { id } = request.params;
-  const deletedLike = await deleteLike(id);
+
+likesController.delete("/", async (request, response) => {
+  const {liker_id, liked_id} = request.body;
+  const deletedLike = await deleteLike(liker_id, liked_id);
   if (deletedLike) {
     if (deletedLike.id) {
       response.status(200).json({
