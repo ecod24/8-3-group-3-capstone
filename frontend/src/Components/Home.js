@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import "../Styles/Home.css";
+import { Link } from 'react-router-dom';
+import '../Styles/Home.css';
 
 export default function Home() {
   return (
@@ -10,16 +10,16 @@ export default function Home() {
       <div class="flex flex-wrap justify-center">
         <div class="w-1/12 sm:w-5/12 px-4 py-2">
           <img
-            src={require("../Assets/couple-eating-sweets-and-snacks-2472751.png")}
-            alt="..."
-            class="shadow-lg rounded-full max-w-full h-auto align-middle border-none py-2"
+            src={require('../Assets/couple-eating-sweets-and-snacks-2472751.png')}
+            alt='...'
+            class='shadow-lg rounded-full max-w-full h-auto align-middle border-none py-2'
           />
         </div>
       </div>
-      <p className="font-fonts text-3xl font-semibold text-rose-700">
-        Eating is a lifestlye
+      <p className='font-fonts text-3xl font-semibold text-rose-700'>
+        Eating is a lifestyle
       </p>
-      <p className="font-fonts text-3xl font-semibold text-rose-700">
+      <p className='font-fonts text-3xl font-semibold text-rose-700'>
         Find a partner based on your diet!
       </p>
       <div>

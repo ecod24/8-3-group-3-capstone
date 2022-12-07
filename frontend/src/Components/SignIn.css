@@ -1,9 +1,16 @@
+#backBtn{
+    margin-top: 10px;
+    width: 100%;
+}
 .signin{
     display: grid;
     justify-content: center;
 }
 
 .signinbutton {
+    background-color: #5D1744;
+}
+.backbutton {
     background-color: #5D1744;
 }
 

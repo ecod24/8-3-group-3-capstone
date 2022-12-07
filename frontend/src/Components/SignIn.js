@@ -11,8 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 export default function SignIn() {
   const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
   const auth = getAuth(app);
 
@@ -36,7 +36,7 @@ export default function SignIn() {
             progress: undefined,
             theme: "light",
           });
-          navigate("/users");
+          navigate('/users');
         }
         // ...
       })
@@ -58,45 +58,53 @@ export default function SignIn() {
 
   return (
     <div>
-      <div className="signin">
-        <p className="font-fonts text-7xl font-semibold text-rose-700">
+      <div className='signin'>
+        <p className='font-fonts text-7xl font-semibold text-rose-700'>
           Welcome Back!
         </p>
-        <p className="font-fonts text-3xl font-semibold text-rose-700">
+        <p className='font-fonts text-3xl font-semibold text-rose-700'>
           Continue finding your match!
         </p>
         <br></br>
         <input
-          className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
-          type="text"
-          id="email"
-          placeholder="Email"
+          className='text-sm font-semibold inline-block py-4 px-4 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1'
+          type='text'
+          id='email'
+          placeholder='Email'
           onChange={handleTextChange}
         />
         <br></br>
         <input
-          className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
-          placeholder="Password"
-          type="password"
-          id="password"
+          className='text-sm font-semibold inline-block py-4 px-4 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1'
+          placeholder='Password'
+          type='password'
+          id='password'
           onChange={handleTextChange}
         />
         <br></br>
         <button
           onClick={signIn}
-          className="signinbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full"
+          className='signinbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full'
         >
           Sign In
         </button>
-        <p className="content-center">
-          Don't have an account?{" "}
-          <Link className="underline" to="/register">
-            click here!{" "}
+        <p className='content-center'>
+          Don't have an account?{' '}
+          <Link className='underline' to='/register'>
+            click here!{' '}
           </Link>
         </p>
+        <Link to='/'>
+          <button
+            id='backBtn'
+            className='backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full'
+          >
+            Back to Home Page
+          </button>
+        </Link>
       </div>
-      <div className="copyright">
-        <div className="copyrightdiv font-fonts text-sm font-semibold text-rose-700">
+      <div className='copyright'>
+        <div className='copyrightdiv font-fonts text-sm font-semibold text-rose-700'>
           Copyright © 2022 Table For Two
         </div>
       </div>

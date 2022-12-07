@@ -1,9 +1,16 @@
+#backBtn{
+    margin-top: 10px;
+    width: 100%;
+}
 .register{
     display: grid;
     justify-content: center;
 }
 
 .registerbutton {
+    background-color: #5D1744;
+}
+.backbutton {
     background-color: #5D1744;
 }
 
