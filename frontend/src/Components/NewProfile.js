@@ -17,6 +17,7 @@ export default function NewProfile() {
     sexual_orientation: "",
     gender: "",
     about_me: "",
+    chat_handle: "",
   });
 
   const newUser = (profile) => {
@@ -185,6 +186,18 @@ export default function NewProfile() {
               value="Submit"
               className="hover:cursor-pointer"
             />
+          </div>
+          <label htmlFor="chat_handle">Chat Handle:</label>
+          <input
+            id="chat_handle"
+            className="NewUserForm"
+            type="text"
+            value={profile.chat_handle}
+            onChange={handleTextChange}
+            placeholder="Add your handle from a chatting service like Messenger, WhatsApp, Kik... etc"
+          />
+          <div id="buttonDiv">
+            <input type="submit" id="submit" value="Submit" />
 
             <br />
             <Link to={"/"}>
