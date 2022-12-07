@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import app from "../Firebase";
 import "./Register.css";
+import { toast } from "react-toastify";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -39,14 +40,33 @@ export default function Register() {
       .then((userCredential) => {
         const user = userCredential.user; //creates user
         if (user) {
-          alert(`${userProfile.email} successfully registered`);
+          toast.success(`${userProfile.email} successfully registered`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
           navigate("/users/new"); //TODO: somehow send here with email prefilled
         }
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(
-          `${errorCode} ${userProfile.email} could not register. Please input a valid email or password.`
+        toast.error(
+          `${userProfile.email} could not register. Please input a valid email or password. ${errorCode} `,
+          {
+            position: "top-right",
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          }
         );
       });
   };
