@@ -1,10 +1,15 @@
 #AboutDiv{
-    justify-items: center;
+    justify-items: space-between;
 }
+.MemberPortrait{
+    height: 350px;
+    width: 400px;
+  }
 #AboutSect{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 30px;
+    margin: 15px;
+    
 }
 .AboutUs{
     font-weight: Bold;
@@ -13,10 +18,10 @@
 }
 .GithubIcon{
     height: 5%;
-    width: 5%;
+    width: 10%;
 }
 .LinkedInIcon{
     height: 5%;
-    width: 5%;
+    width: 10%;
 }
 
