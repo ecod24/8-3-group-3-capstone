@@ -28,9 +28,42 @@ export default function NavBar() {
           width='200px'
         />{' '}
       </Link>
-      <Link className='NavText' to='/about'>
+
+      <Link to={'/about'} className='NavText'>
         About Us
       </Link>
+
+      <ul class='menu'>
+        <Link to={`/users`}>
+          <li>
+            <a class='burger' href='#'>
+              Profile
+            </a>
+          </li>
+        </Link>
+        <Link to={'/'}>
+          <li>
+            <a class='burger' href='#'>
+              Register
+            </a>
+          </li>
+        </Link>
+        <Link to={`/users/new`}>
+          <li>
+            <a class='burger' href='#'>
+              Sign In
+            </a>
+          </li>
+        </Link>
+        <Link to={`/about`}>
+          <li>
+            <a class='burger' href='#'>
+              Contact us
+            </a>
+          </li>
+        </Link>
+      </ul>
+
       <ul class='menu'>
         <Link to={`/users`}>
           <li>
