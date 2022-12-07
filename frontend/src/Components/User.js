@@ -1,16 +1,19 @@
 //Treating user image as a string since there are no images.
+import { Link } from 'react-router-dom';
 export default function User({ info }) {
   return (
     <div
       id='UserDiv'
       className='max-w-sm rounded overflow-hidden  shadow-lg border-double border-4 border-black-600 ...'
     >
-      <img
-        id='UserImage'
-        className='w-full'
-        src={info.image}
-        alt={'user profile pic'}
-      />
+      <Link className='profileImage' to={`/users/${info.id}`}>
+        <img
+          id='UserImage'
+          className='w-full'
+          src={info.image}
+          alt={'user profile pic'}
+        />
+      </Link>
       <div id='UserInnerDiv'>
         <h1 id='UserName' className='text-center font-bold text-2xl mb-5'>
           {info.name}, {info.age}
