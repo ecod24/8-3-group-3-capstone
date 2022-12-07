@@ -79,12 +79,14 @@ export default function EditableUserProfile() {
           </Group>
           <Group>
             <br />
-            <button
-              class='border-solid py-2 px-2 border-2 bg-white border-black-600 ...'
-              // onClick={startEditCallback}
-            >
-              Edit
-            </button>
+            <Link to={`/users/${info.id}/edit`}>
+              <button
+                class='border-solid py-2 px-2 border-2 bg-white border-black-600 ...'
+                // onClick={startEditCallback}
+              >
+                Edit
+              </button>
+            </Link>
           </Group>
         </div>
       </div>
