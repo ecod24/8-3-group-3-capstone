@@ -1,6 +1,7 @@
 import axios from 'axios';
 import '../Styles/UserProfile.css';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import User from './User';
 import '../Styles/UserProfiles.css';
 
@@ -64,10 +65,18 @@ export default function UserProfile() {
   }, [URL]);
 
   return (
-    <div className='UserGallery'>
-      {users.map((user) => {
-        return <User info={user} key={`${user.id}-${user.name}`} />;
-      })}
-    </div>
+    <section>
+      <Link to='/'>
+        <button className='backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full'>
+          Back to Home Page
+        </button>
+      </Link>
+
+      <div className='UserGallery'>
+        {users.map((user) => {
+          return <User info={user} key={`${user.id}-${user.name}`} />;
+        })}
+      </div>
+    </section>
   );
 }

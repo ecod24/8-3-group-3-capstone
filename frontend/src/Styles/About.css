@@ -1,6 +1,10 @@
 #AboutDiv{
     justify-items: center;
 }
+.MemberPortrait{
+    height: 500px;
+    width: 750px;
+  }
 #AboutSect{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -13,10 +17,10 @@
 }
 .GithubIcon{
     height: 5%;
-    width: 5%;
+    width: 10%;
 }
 .LinkedInIcon{
     height: 5%;
-    width: 5%;
+    width: 10%;
 }
 
