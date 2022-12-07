@@ -1,10 +1,12 @@
-import React from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import app from '../Firebase';
-import './SignIn.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import app from "../Firebase";
+import "./SignIn.css";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -24,14 +26,32 @@ export default function SignIn() {
         // Signed in
         const user = userCredential.user;
         if (user) {
-          alert(`Welcome back ${userProfile.email}!`); //TODO: consider a modal window here.
+          toast.success(`Welcome back ${userProfile.email}!`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
           navigate('/users');
         }
         // ...
       })
       .catch((error) => {
+        toast.error(`${userProfile.email} is not registered`, {
+          position: "top-right",
+          autoClose: false,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         const errorCode = error.code;
-        console.log(`${userProfile.email} is not registered`);
         const errorMessage = error.message;
       });
   };
