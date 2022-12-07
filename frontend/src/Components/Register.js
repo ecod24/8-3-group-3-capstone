@@ -97,7 +97,10 @@ export default function Register() {
         </Link>
       </p>
       <Link to='/'>
-        <button className='backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full'>
+        <button
+          id='backBtn'
+          className='backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full'
+        >
           Back to Home Page
         </button>
       </Link>

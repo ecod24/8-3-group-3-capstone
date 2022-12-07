@@ -21,33 +21,78 @@ export default function EditableUserProfile() {
 
   return (
     <div>
+      <div className='flex flex-col md:flex-row  overflow-hidden shadow-lg border-double border-4 border-black-600 ...'>
+        <div class='h-240 w-auto md:w-1/2'>
+          <img
+            class='inset-0 h-240 w-full object-cover object-center border-dashed border-2 border-black-600 ... '
+            src={info.image}
+          />
+        </div>
+        <div className='w-full py-4 px-6 text-gray-800 flex flex-col justify-between'>
+          <Group>
+            <h2 className='font-semibold  text-lg leading-tight truncate '>
+              Name:
+            </h2>{' '}
+            {info.name}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              Email:
+            </h2>{' '}
+            {info.email}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              Age:
+            </h2>{' '}
+            {info.age}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              Gender:
+            </h2>{' '}
+            {info.gender}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              My Preffered Foods:
+            </h2>{' '}
+            {info.food_preferences}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              My Eating Habits:
+            </h2>
+            {info.dietary_restrictions}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              About Myself:
+            </h2>{' '}
+            {info.about_me}
+          </Group>
+          <Group>
+            <br />
+            <button
+              class='border-solid py-2 px-2 border-2 bg-white border-black-600 ...'
+              // onClick={startEditCallback}
+            >
+              Edit
+            </button>
+          </Group>
+        </div>
+      </div>
       <Link to='/users'>
         <button className='backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full'>
           Back to User Gallery
         </button>
       </Link>
-      <Group>
-        <h2>Name:</h2> {info.name}
-      </Group>
-      <Group>
-        <h2>Email:</h2> {info.email}
-      </Group>
-      <Group>
-        <h2>Age:</h2> {info.age}
-      </Group>
-      <Group>
-        <h2>Gender:</h2> {info.gender}
-      </Group>
-      <Group>
-        <h2>Preffered Foods:</h2>
-      </Group>
-      <Group>
-        <button
-        // onClick={startEditCallback}
-        >
-          Edit
-        </button>
-      </Group>
     </div>
   );
 }

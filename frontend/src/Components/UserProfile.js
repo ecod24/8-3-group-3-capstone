@@ -10,7 +10,7 @@ import '../Styles/UserProfiles.css';
  * @param {string} word word to be normalized.
  * @returns string of normalized word
  */
-const normalizeOneWord = (word) => {
+const normalizeOneEntry = (word) => {
   //trim spaces on outside first
   word = word.trim();
   word = word.split('');
@@ -32,11 +32,11 @@ const normalizeListOfWords = (words) => {
     .trim()
     .split(',')
     .map((word) => {
-      return normalizeOneWord(word);
+      return normalizeOneEntry(word);
     })
     .join(', ')
     .trim();
-  // call normalizeOneWord() on each entry
+  // call normalizeOneEntry() on each entry
   // join normalized words in a comma separated string and return
 };
 
@@ -48,7 +48,9 @@ export default function UserProfile() {
   const uniqueRestrictions = () => {
     //make a list of unique restrictions to filter by.
     users.forEach((user) => {
-      let listOfRestrictions = normalizeListOfWords(user).split(',');
+      let listOfRestrictions = normalizeListOfWords(
+        user.dietary_restrictions,
+      ).split(',');
       listOfRestrictions.forEach((restriction) => {
         if (!dietary_restrictions.includes(restriction)) {
           dietary_restrictions.push(restriction);
@@ -60,23 +62,33 @@ export default function UserProfile() {
   useEffect(() => {
     axios
       .get(`${URL}/users`)
-      .then((res) => setUsers(res.data.payload))
+      .then((res) => {
+        setUsers(res.data.payload);
+        uniqueRestrictions();
+      })
       .catch((err) => console.warn(err.message.payload));
   }, [URL]);
 
   return (
-    <section>
-      <Link to='/'>
-        <button className='backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full'>
-          Back to Home Page
-        </button>
-      </Link>
-
-      <div className='UserGallery'>
-        {users.map((user) => {
+    <div className='UserGallery'>
+      {dietary_restrictions.map((restriction) => {
+        return (
+          <button onClick={() => setCurrentFilter(restriction)}>
+            {restriction}
+          </button>
+        );
+      })}
+      {users
+        .filter((user) => {
+          if (!currentFilter) {
+            return true;
+          } else {
+            return user.dietary_restrictions.includes(currentFilter);
+          }
+        })
+        .map((user) => {
           return <User info={user} key={`${user.id}-${user.name}`} />;
         })}
-      </div>
-    </section>
+    </div>
   );
 }

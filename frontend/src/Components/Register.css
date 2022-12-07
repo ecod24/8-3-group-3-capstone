@@ -1,3 +1,7 @@
+#backBtn{
+    margin-top: 10px;
+    width: 100%;
+}
 .register{
     display: grid;
     justify-content: center;

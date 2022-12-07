@@ -1,14 +1,15 @@
 #AboutDiv{
-    justify-items: center;
+    justify-items: space-between;
 }
 .MemberPortrait{
-    height: 500px;
-    width: 750px;
+    height: 350px;
+    width: 400px;
   }
 #AboutSect{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 30px;
+    margin: 15px;
+    
 }
 .AboutUs{
     font-weight: Bold;
