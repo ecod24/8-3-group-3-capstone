@@ -2,13 +2,12 @@
     transform: scale(2)
 }
 .T4TNavbar{
-background-image: url(../Assets/Marble2.png);
 background-repeat: no-repeat;
 background-size: cover;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-background-color: floralwhite;
+background-color: 5E1745;
 
 }
 .NavText{
