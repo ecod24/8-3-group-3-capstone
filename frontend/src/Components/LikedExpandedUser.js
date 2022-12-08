@@ -1,4 +1,3 @@
-import UserProfile from '../Components/UserProfile.js';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Group from './Group';
@@ -31,56 +30,70 @@ export default function EditableUserProfile() {
         <div className='w-full py-4 px-6 text-gray-800 flex flex-col justify-between'>
           <Group>
             <h2 className='font-semibold  text-lg leading-tight truncate '>
-              {info.name} , {info.age}
+              Name:
             </h2>{' '}
+            {info.name}
           </Group>
           <br />
           <Group>
             <h2 className='font-semibold text-lg leading-tight truncate'>
-              {info.email}
+              Email:
             </h2>{' '}
-          </Group>
-          <br />
-
-          <br />
-          <Group>
-            <h2 className='font-semibold text-lg leading-tight truncate'>
-              {info.sexual_orientation}, {info.gender}
-            </h2>{' '}
+            {info.email}
           </Group>
           <br />
           <Group>
             <h2 className='font-semibold text-lg leading-tight truncate'>
-              {info.dietary_restrictions}
+              Age:
+            </h2>{' '}
+            {info.age}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              Gender:
+            </h2>{' '}
+            {info.gender}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              My Preffered Foods:
+            </h2>{' '}
+            {info.food_preferences}
+          </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              My Eating Habits:
             </h2>
+            {info.dietary_restrictions}
           </Group>
           <br />
-          <Group>
-            <h2 className='font-semibold text-lg leading-tight truncate'>
-              My Fav Foods: {info.food_preferences}
-            </h2>{' '}
-          </Group>
-          <br />
-
           <Group>
             <h2 className='font-semibold text-lg leading-tight truncate'>
               About Myself:
             </h2>{' '}
             {info.about_me}
           </Group>
+          <br />
+          <Group>
+            <h2 className='font-semibold text-lg leading-tight truncate'>
+              Chat with Me!
+            </h2>
+            {info.chat_handle}
+          </Group>
+          <br />
           <Group>
             <br />
-            <div className='flex flex-col items-center'>
-              <button className='LikeButton'>
-                <img
-                  src={require('../Assets/icons8-heart-suit-96.png')}
-                  alt='Like'
-                  onClick={() => {
-                    console.log('I was clicked');
-                  }}
-                />
+            <Link to={`/users/${info.id}/edit`}>
+              <button
+                class='border-solid py-2 px-2 border-2 bg-white border-black-600 ...'
+                // onClick={startEditCallback}
+              >
+                Edit
               </button>
-            </div>
+            </Link>
           </Group>
         </div>
       </div>

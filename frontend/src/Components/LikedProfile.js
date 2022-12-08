@@ -18,13 +18,16 @@ export default function LikedProfile({ info }) {
             Email: {info.email}
           </h1> */}
         <h1 id='UserGender' className='text-black-700 text-base'>
-          Gender: {info.gender}
+          {info.sexual_orientation}, {info.gender}
         </h1>
+
         <h1 id='FoodPreference' className='text-black-700 text-base'>
-          Food Preferences: {info.food_preferences}
+          My Fav Foods: {info.food_preferences}
         </h1>
-        <h1 id='UserSexOrient' className='text-black-700 text-base'>
-          Sexual Orientation: {info.sexual_orientation}
+
+        <h1 id='UserChat' className='text-black-700 text-base'>
+          {' '}
+          Connect With Me! <span>{info.chat_handle}</span>
         </h1>
       </div>
       <div className='flex flex-col items-center'>
