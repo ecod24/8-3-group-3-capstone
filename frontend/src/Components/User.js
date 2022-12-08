@@ -1,5 +1,6 @@
 //Treating user image as a string since there are no images.
 import { Link } from 'react-router-dom';
+
 export default function User({ info }) {
   return (
     <div
@@ -22,13 +23,11 @@ export default function User({ info }) {
           Email: {info.email}
         </h1> */}
         <h1 id='UserGender' className='text-gray-700 text-base'>
-          Gender: {info.gender}
+          {info.sexual_orientation}, {info.gender}
         </h1>
+
         <h1 id='FoodPreference' className='text-gray-700 text-base'>
-          Food Preferences: {info.food_preferences}
-        </h1>
-        <h1 id='UserSexOrient' className='text-gray-700 text-base'>
-          Sexual Orientation: {info.sexual_orientation}
+          Fav Foods: {info.food_preferences}
         </h1>
       </div>
       <div className='flex flex-col items-center'>

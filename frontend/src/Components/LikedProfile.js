@@ -26,6 +26,10 @@ export default function LikedProfile({ info }) {
         <h1 id='UserSexOrient' className='text-black-700 text-base'>
           Sexual Orientation: {info.sexual_orientation}
         </h1>
+        <h1 id='UserChat' className='text-black-700 text-base'>
+          {' '}
+          Connect With Me! <span>{info.chat_handle}</span>
+        </h1>
       </div>
       <div className='flex flex-col items-center'>
         <button className='LikeButton'>

@@ -1,0 +1,12 @@
+#EditDiv{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border: 2px solid black;
+}
+#EditUserForm{
+    width: 100%;
+}
+.EditInputForm{
+    width:100%;
+}
