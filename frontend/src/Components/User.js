@@ -17,17 +17,26 @@ export default function User({ info }) {
         />
       </Link>
       <div id='UserInnerDiv'>
-        <h1 id='UserName' className='text-center font-bold text-2xl mb-5'>
+        <h1
+          id='UserName'
+          className='text-center font-bold font-fonts text-red text-2xl mb-5'
+        >
           {info.name}, {info.age}
         </h1>
         {/* <h1 id="UserEmail" class="text-gray-700 text-base">
           Email: {info.email}
         </h1> */}
-        <h1 id='UserGender' className='text-gray-700 text-base'>
+        <h1
+          id='UserGender'
+          className='text-gray-700 text-base font-fonts text-red'
+        >
           {info.sexual_orientation}, {info.gender}
         </h1>
 
-        <h1 id='FoodPreference' className='text-gray-700 text-base'>
+        <h1
+          id='FoodPreference'
+          className='text-gray-700 text-base font-fonts text-red'
+        >
           Fav Foods: {info.food_preferences}
         </h1>
       </div>
