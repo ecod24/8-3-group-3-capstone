@@ -12,7 +12,9 @@ CREATE TABLE users (
     food_preferences TEXT,
     sexual_orientation TEXT,
     gender TEXT,
-    about_me TEXT
+    about_me TEXT,
+    firebase_id TEXT,
+    chat_handle TEXT
 );
 
 CREATE TABLE likes (

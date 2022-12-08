@@ -18,6 +18,7 @@ export default function EditProfile() {
 		sexual_orientation: "",
 		gender: "",
 		about_me: "",
+		chat_handle: "",
 	});
 	useEffect(() => {
 		axios
@@ -140,6 +141,17 @@ export default function EditProfile() {
 						name="about_me"
 						onChange={handleChange}
 						value={profile.about_me}
+					/>
+				</label>
+				<label>
+					Chat Handle
+					<input
+						id="chat_handle"
+						type="text"
+						name="chat_handle"
+						placeholder="Add your handle from a chat system like Messenger, WhatsApp, Kik... etc"
+						onChange={handleChange}
+						value={profile.chat_handle}
 					/>
 				</label>
 			</form>

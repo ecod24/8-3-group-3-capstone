@@ -1,15 +1,15 @@
 \c capstone;
 
-INSERT INTO users (name, image, email, age, dietary_restrictions, food_preferences, sexual_orientation, gender, about_me) VALUES
-('Mai Levy', 'https://randomuser.me/api/portraits/women/95.jpg', 'kittenmai29@gmail.com', 22, 'Vegan', 'Mashed Potatoes, Ice Cream, Green Bean Casserole', 'Straight', 'Female', 'Devoted Christian and Vegan. I love getting to know people over good food. I am excited to meet with one of you!'),
-('Trevor Cousins', 'https://randomuser.me/api/portraits/men/95.jpg', 'tc9095@yahoo.com', 35, 'Egg Allergy, Peanut Allergy', 'Steak, Mashed Potatoes', 'Gay', 'Male', 'My name is Trevor and I love steak. Maybe too much...'),
-('Justice Lawrence', 'https://randomuser.me/api/portraits/men/15.jpg', 'lawrencejust6@gmail.com', 32, 'Vegan, Lactose Intolerant', 'Nuggets, Cake', 'Straight', 'Male', 'Not much to know about me if you eat meat. If you do not however.. I have so many places to tell you about, I look forward to telling you all about it.'),
-('Kristian Gent', 'https://randomuser.me/api/portraits/men/22.jpg', 'gentdoesitagain@gmail.com', 25, 'Halal', 'Burgers, Caviar, Fried Food', 'Gay', 'Male', 'There are a lot of good Halal spots I would love to show you if you are interested. Lets talk and find out what you like!'),
-('Jessica Terry', 'https://randomuser.me/api/portraits/women/44.jpg', 'jt101015@gmail.com', 23, 'Lactose Intolerant', 'Dumplings, Shrimp Cocktail, Ice Cream', 'Straight', 'Female', 'Although I am lactose, its never stopped me in the past from enjoying really good food, dairy or not.'),
-('Lani Thomas', 'https://randomuser.me/api/portraits/women/68.jpg', 'lanithom@outlook.com', 29, 'Kosher, Gluten Free', 'Fried Chicken', 'Bisexual', 'Female', 'I am celiac and cannot process gluten. I found a new love for food discovering how to make things delicious without the need for gluten!');
+INSERT INTO users (name, image, email, age, dietary_restrictions, food_preferences, sexual_orientation, gender, about_me, firebase_id, chat_handle) VALUES
+('Mai Levy', 'https://randomuser.me/api/portraits/women/95.jpg', 'kittenmai29@gmail.com', 22, 'Vegan', 'Mashed Potatoes, Ice Cream, Green Bean Casserole', 'Straight', 'Female', 'Devoted Christian and Vegan. I love getting to know people over good food. I am excited to meet with one of you!', 'W4FK4STalZUiP6gWtfqaU15BWRH2', '@kittenmai'),
+('Trevor Cousins', 'https://randomuser.me/api/portraits/men/95.jpg', 'tc9095@yahoo.com', 35, 'Egg Allergy, Peanut Allergy', 'Steak, Mashed Potatoes', 'Gay', 'Male', 'My name is Trevor and I love steak. Maybe too much...', 'VrnVrrzccZR06uUOA71hmNpcEDt1', '@trevc95'),
+('Justice Lawrence', 'https://randomuser.me/api/portraits/men/15.jpg', 'lawrencejust6@gmail.com', 32, 'Vegan, Lactose Intolerant', 'Nuggets, Cake', 'Straight', 'Male', 'Not much to know about me if you eat meat. If you do not however.. I have so many places to tell you about, I look forward to telling you all about it.', 'zTJzvxvJByTmVEUxcGe6R6PTpqU2', '@justlaw6'),
+('Kristian Gent', 'https://randomuser.me/api/portraits/men/22.jpg', 'gentdoesitagain@gmail.com', 25, 'Halal', 'Burgers, Caviar, Fried Food', 'Gay', 'Male', 'There are a lot of good Halal spots I would love to show you if you are interested. Lets talk and find out what you like!' , 'YP6HcCYTTsamYH2oJ95mZW4vwHl2', '@gentdoesit'),
+('Jessica Terry', 'https://randomuser.me/api/portraits/women/44.jpg', 'jt101015@gmail.com', 23, 'Lactose Intolerant', 'Dumplings, Shrimp Cocktail, Ice Cream', 'Straight', 'Female', 'Although I am lactose, its never stopped me in the past from enjoying really good food, dairy or not.', 'vJhKcyYIyvRFgQhA1Mla7LTOzDu1', '@jessterr1'),
+('Lani Thomas', 'https://randomuser.me/api/portraits/women/68.jpg', 'lanithom@outlook.com', 29, 'Kosher, Gluten Free', 'Fried Chicken', 'Bisexual', 'Female', 'I am celiac and cannot process gluten. I found a new love for food discovering how to make things delicious without the need for gluten!', 'WnyqeAmlhZaPatHOzBzhbIe04nQ2', '@jaylani');
 
 INSERT INTO likes (liker_id, liked_id) VALUES
-(1, 2);
+(1, 2), (2, 3), (2, 4), (2, 6);
 
 INSERT INTO foods (name, image) VALUES
 ('Birria Tacos', 'https://www.swankyrecipes.com/wp-content/uploads/2022/08/Birria-Tacos.jpg'),
