@@ -9,10 +9,10 @@ module.exports = {
       colors: {
         logopurple: "#4B1E7F",
         logored: "#E14F62", //buttons
-        beige: "#E8DDCC",
-        green: "#EEF3E7",
-        red: "#AE2A3F", //text 
-        rosered: "#BE123C", //text
+        beige: "#F1EADF",
+        green: "#DAE3C9",
+        red: "#AE2A3F", //text
+        rosered: "#BE123C", //clickable text
       },
     },
     screens: {

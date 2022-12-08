@@ -23,9 +23,9 @@ const API = process.env.REACT_APP_API_URL;
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav className="bg-beige" />
 
-      <main>
+      <main className="bg-beige">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/myfoods" element={<FoodsPage />} />

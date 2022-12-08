@@ -6,7 +6,7 @@ export default function User({ info }) {
   return (
     <div
       id='UserDiv'
-      className='max-w-sm rounded overflow-hidden  shadow-lg border-double border-4 border-black-600 ...'
+      className='max-w-sm bg-beige rounded overflow-hidden  shadow-lg border-double border-4 border-black-600 ...'
     >
       <Link className='profileImage' to={`/users/${info.id}`}>
         <img

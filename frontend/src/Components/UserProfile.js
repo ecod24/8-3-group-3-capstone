@@ -8,7 +8,7 @@ import LikedPush from './LikedPush';
 
 export default function UserProfile({ currentFilter, users }) {
   return (
-    <div className='UserGallery'>
+    <div className='UserGallery bg-beige'>
       {users
         .filter((user) => {
           if (!currentFilter) {

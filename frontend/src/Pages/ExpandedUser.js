@@ -20,7 +20,7 @@ export default function EditableUserProfile() {
   console.log();
 
   return (
-    <div>
+    <div className='min-h-screen'>
       <div className='flex flex-col md:flex-row  overflow-hidden shadow-lg border-double border-4 border-black-600 ...'>
         <div class='h-240 w-auto md:w-1/2'>
           <img

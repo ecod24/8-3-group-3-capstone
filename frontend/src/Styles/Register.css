@@ -15,5 +15,5 @@ div.copyright {
     display: grid;
     grid-template-columns: 1;
     justify-content:center;
-    margin-top:41vh;
+    margin-top:full;
 }

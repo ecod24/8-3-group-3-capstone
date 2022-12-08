@@ -3,9 +3,10 @@
     justify-items: center;
     padding-bottom: 10em;
     border-radius: 1em;
-    margin-bottom: 2em;
+    padding: 0;
 }
 section {
-    max-width: 20000px;
-    max-height: 700px;
+    max-width: vw;
+    min-height: vh;
+    padding-bottom: 2em;
 }

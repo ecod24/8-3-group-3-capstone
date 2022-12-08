@@ -55,8 +55,8 @@ export default function SignIn() {
   };
 
   return (
-    <div>
-      <div className="signin mt-12">
+    <div className="bg-beige min-h-screen">
+      <div className="signin py-12">
         <p className="font-fonts text-7xl font-semibold text-rose-700">
           Welcome Back
         </p>
