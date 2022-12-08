@@ -13,6 +13,7 @@ import NewUserPage from "./Pages/NewUserPage.js";
 import "./App.css";
 import Register from "./Components/Register.js";
 import SignIn from "./Components/SignIn.js";
+import Footer from "./Components/Footer.js";
 import EditPage from "./Pages/EditPage.js";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { ToastContainer } from "react-toastify";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/users/:id/edit" element={<EditPage API={API} />} />
           {/* <Route path="/users/:id" element={<></>} />//a show page, eventually */}
         </Routes>
+        <Footer />
         <ToastContainer />
       </main>
     </BrowserRouter>
