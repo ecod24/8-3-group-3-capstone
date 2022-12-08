@@ -1,27 +1,20 @@
-import { Link } from 'react-router-dom';
-import React from "react";
-import '../Styles/NavBar.css';
+import { Link } from "react-router-dom";
+import "../Styles/NavBar.css";
 
 export default function NavBar() {
-  state = {
-    hide: true,
-  }
-
-  const menu = document.querySelector('.menu');
-  const closeIcon = document.querySelector('.closeIcon');
-  const menuIcon = document.querySelector('.menuIcon');
+  const menu = document.querySelector(".menu");
+  const closeIcon = document.querySelector(".closeIcon");
+  const menuIcon = document.querySelector(".menuIcon");
 
   function toggleMenu() {
-    if (menu.classList.contains('showMenu')) {
-      menu.classList.remove('showMenu');
-      closeIcon.style.display = 'none';
-      menuIcon.style.display = 'block';
-      this.setState({hide: false,})
+    if (menu.classList.contains("showMenu")) {
+      menu.classList.remove("showMenu");
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
     } else {
-      menu.classList.add('showMenu');
-      closeIcon.style.display = 'block';
-      menuIcon.style.display = 'none';
-      this.setState({hide: true,})
+      menu.classList.add("showMenu");
+      closeIcon.style.display = "block";
+      menuIcon.style.display = "none";
     }
   }
 

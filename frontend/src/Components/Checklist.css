@@ -1,5 +1,6 @@
 .filterbtn {
-    column-count: 1;
+    padding-left: 50px;
+    column-count: 2;
     column-span: 1;
     justify-content: left;
     float: left;
@@ -7,8 +8,8 @@
 }
 
 #filterbox {
-    display: none;
-    column-count: 1;
+    display: grid;
+    column-count: 2;
     column-span: 1;
     justify-content: left;
     float: left;
