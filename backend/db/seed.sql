@@ -9,7 +9,7 @@ INSERT INTO users (name, image, email, age, dietary_restrictions, food_preferenc
 ('Lani Thomas', 'https://randomuser.me/api/portraits/women/68.jpg', 'lanithom@outlook.com', 29, 'Kosher, Gluten Free', 'Fried Chicken', 'Bisexual', 'Female', 'I am celiac and cannot process gluten. I found a new love for food discovering how to make things delicious without the need for gluten!', 'WnyqeAmlhZaPatHOzBzhbIe04nQ2', '@jaylani');
 
 INSERT INTO likes (liker_id, liked_id) VALUES
-(1, 2), (2, 3), (2, 4), (2, 6);
+(1, 2), (2, 3), (2, 4), (2, 6), (3, 2), (5, 6);
 
 INSERT INTO foods (name, image) VALUES
 ('Birria Tacos', 'https://www.swankyrecipes.com/wp-content/uploads/2022/08/Birria-Tacos.jpg'),

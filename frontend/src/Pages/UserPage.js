@@ -43,7 +43,8 @@ export default function UserPage() {
 	const [currentFilter, setCurrentFilter] = useState("");
 	const URL = process.env.REACT_APP_API_URL;
 	const [users, setUsers] = useState([]);
-	let dietary_restrictions = ["Vegan", "Kosher"]; //a list of unique dietary restrictions to filter by.
+	const [dietaryRestrictions, setDietaryResctrions] = useState([]);
+	//let dietary_restrictions = ["Vegan", "Kosher"]; //a list of unique dietary restrictions to filter by.
 	// const uniqueRestrictions = () => {
 	// 	//make a list of unique restrictions to filter by.
 	// };
@@ -57,9 +58,10 @@ export default function UserPage() {
 					let listOfRestrictions = normalizeListOfWords(user.dietary_restrictions).split(
 						","
 					);
+					//console.log(listOfRestrictions);
 					listOfRestrictions.forEach((restriction) => {
-						if (!dietary_restrictions.includes(restriction)) {
-							dietary_restrictions.push(restriction);
+						if (!dietaryRestrictions.includes(restriction)) {
+							setDietaryResctrions([...dietaryRestrictions, restriction]);
 						}
 					});
 				});
@@ -69,7 +71,7 @@ export default function UserPage() {
 
 	return (
 		<section>
-			<Checklist setCurrentFilter={setCurrentFilter} restrictions={dietary_restrictions} />
+			<Checklist setCurrentFilter={setCurrentFilter} restrictions={dietaryRestrictions} />
 			<UserProfile currentFilter={currentFilter} users={users} />
 			<Link to="/">
 				<button className="backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full">
