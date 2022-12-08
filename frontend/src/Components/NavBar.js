@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import React from "react";
 import "../Styles/NavBar.css";
 
 export default function NavBar() {
+  state = {
+    hide: true,
+  }
+
   const menu = document.querySelector(".menu");
   const closeIcon = document.querySelector(".closeIcon");
   const menuIcon = document.querySelector(".menuIcon");
@@ -11,10 +16,12 @@ export default function NavBar() {
       menu.classList.remove("showMenu");
       closeIcon.style.display = "none";
       menuIcon.style.display = "block";
+      this.setState({hide: false,})
     } else {
       menu.classList.add("showMenu");
       closeIcon.style.display = "block";
       menuIcon.style.display = "none";
+      this.setState({hide: true,})
     }
   }
 
