@@ -1,5 +1,6 @@
 //Treating user image as a string since there are no images.
 import { Link } from 'react-router-dom';
+import LikedPush from './LikedPush';
 
 export default function User({ info }) {
   return (
@@ -35,9 +36,7 @@ export default function User({ info }) {
           <img
             src={require('../Assets/icons8-heart-suit-96.png')}
             alt='Like'
-            onClick={() => {
-              console.log('I was clicked');
-            }}
+            onClick={LikedPush}
           />
         </button>
       </div>
