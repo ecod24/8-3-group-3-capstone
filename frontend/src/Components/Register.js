@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import app from "../Firebase";
-import "./Register.css";
+import "../Styles/Register.css";
 import { toast } from "react-toastify";
 
 export default function Register() {
@@ -89,7 +89,7 @@ export default function Register() {
       </p>
       <br></br>
       <input
-        className="text-sm font-semibold inline-block py-4 px-5 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
+        className="text-sm font-semibold inline-block py-4 px-5 text-pink-600 bg-white last:mr-0 mr-1"
         type="text"
         id="email"
         placeholder="Email"
@@ -97,7 +97,7 @@ export default function Register() {
       />
       <br></br>
       <input
-        className="text-sm font-semibold inline-block py-4 px-5 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
+        className="text-sm font-semibold inline-block py-4 px-5 text-pink-600 bg-white last:mr-0 mr-1"
         placeholder="Password"
         type="password"
         id="password"
@@ -106,23 +106,18 @@ export default function Register() {
       <br></br>
       <button
         onClick={signUp}
-        className="registerbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full"
+        className="registerbutton bg-logored text-white font-bold py-4 px-20 rounded-full"
       >
         Register
       </button>
-      <p className="content-center">
+      <p className="content-center font-fonts text-red">
         Already have an account?{" "}
-        <Link className="underline" to="/signin">
+        <Link className="underline text-logored" to="/signin">
           click here!
         </Link>
       </p>
       <Link to="/">
-        <button
-          id="backBtn"
-          className="backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full"
-        >
-          Back to Home Page
-        </button>
+        <img alt="Back" src={require("../Assets/previous.png")} />
       </Link>
     </div>
   );

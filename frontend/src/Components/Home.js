@@ -7,12 +7,12 @@ export default function Home() {
       <h1 className="font-fonts text-rose-700 text-7xl font-semibold my-6">
         Table for Two
       </h1>
-      <div class="flex flex-wrap">
-        <div class="w-1/12 sm:w-5/12 px-4 py-2">
+      <div className="flex flex-wrap">
+        <div className="w-1/12 sm:w-5/12 px-4 py-2">
           <img
             src={require("../Assets/couple-eating-sweets-and-snacks-2472751.png")}
             alt="..."
-            class="rounded-full max-w-md max-h-full border-none py-2"
+            className="rounded-full max-w-md max-h-full border-none py-2"
           />
         </div>
       </div>

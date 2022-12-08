@@ -7,11 +7,12 @@ module.exports = {
         fonts: ["Noto"],
       },
       colors: {
-        logopurple: "#512082",
-        logored: "#E14F62",
+        logopurple: "#4B1E7F",
+        logored: "#E14F62", //buttons
         beige: "#E8DDCC",
         green: "#EEF3E7",
-        red: "#AE2A3F",
+        red: "#AE2A3F", //text 
+        rosered: "#BE123C", //text
       },
     },
     screens: {

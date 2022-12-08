@@ -3,7 +3,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import app from "../Firebase";
-import "./SignIn.css";
+import "../Styles/SignIn.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -51,8 +51,6 @@ export default function SignIn() {
           progress: undefined,
           theme: "light",
         });
-        const errorCode = error.code;
-        const errorMessage = error.message;
       });
   };
 
@@ -67,7 +65,7 @@ export default function SignIn() {
         </p>
         <br></br>
         <input
-          className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
+          className="text-sm font-semibold inline-block py-4 px-4 text-pink-600 bg-white last:mr-0 mr-1"
           type="text"
           id="email"
           placeholder="Email"
@@ -75,7 +73,7 @@ export default function SignIn() {
         />
         <br></br>
         <input
-          className="text-sm font-semibold inline-block py-4 px-4 rounded-full text-pink-600 bg-pink-200 last:mr-0 mr-1"
+          className="text-sm font-semibold inline-block py-4 px-4 text-pink-600 bg-white last:mr-0 mr-1"
           placeholder="Password"
           type="password"
           id="password"
@@ -84,23 +82,18 @@ export default function SignIn() {
         <br></br>
         <button
           onClick={signIn}
-          className="signinbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full"
+          className="signinbutton bg-logored text-white font-bold py-4 px-20 rounded-full"
         >
           Sign In
         </button>
-        <p className="content-center">
+        <p className="content-center font-fonts text-red">
           Don't have an account?{" "}
-          <Link className="underline" to="/register">
-            click here!{" "}
+          <Link className="underline text-logored" to="/register">
+            click here!
           </Link>
         </p>
         <Link to="/">
-          <button
-            id="backBtn"
-            className="backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full"
-          >
-            Back to Home Page
-          </button>
+          <img alt="Back" src={require("../Assets/previous.png")} />
         </Link>
       </div>
     </div>
