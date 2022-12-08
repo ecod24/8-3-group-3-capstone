@@ -5,7 +5,16 @@
   padding: 40px 0;
 }
 
+.App-logo {
+  max-height: 100px;
+  width: 125px;
+  pointer-events: none;
+}
 
+.App {
+  /* background-color: #ffe4e1 */
+  background-color: white;
+}
 
 body{
   background-color: #5E1745;
@@ -25,12 +34,6 @@ body{
 
 body{
   background-color: #EADDCA;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
