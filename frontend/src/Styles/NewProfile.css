@@ -1,9 +1,16 @@
 .NewUserDiv{
     border: 2px solid black;
 }
-.NewUserForm{
-    width:100%;
+
+.NewUserForm {
+    display: flex;
+    flex-direction: column;
+    /* align-items:  center; */
+    /* justify-content: center; */
+    text-align: center;
+    margin-top: 1em;
 }
+
 #FormBlurb{
     font-family: "Courier New";
     font-weight: bold;
@@ -29,4 +36,16 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-bottom: 5em;
 }
+#name, #image, #age, .emails, #Dietary_Restrictions,#Food_Restrictions, #sexual_orientation, #gender, #about_me, #chat_handle{
+    background-color: #5E1745;
+    text-align: center;
+    max-width: 80em;
+    margin-bottom: 1em;
+    margin-left: 11.7em;
+    margin-top: 1em;
+}
+
+
+
