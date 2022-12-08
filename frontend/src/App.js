@@ -17,34 +17,46 @@ import Footer from "./Components/Footer.js";
 import EditPage from "./Pages/EditPage.js";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { ToastContainer } from "react-toastify";
+import { useEffect, useState } from "react";
+import { getAuth } from "firebase/auth";
+import app from "./Firebase.js";
+import AuthProvider from "./AuthContext.js";
 
 const API = process.env.REACT_APP_API_URL;
 
 function App() {
+  // const [signedIn, setSignedIn]= useState(false);
+  // const auth = getAuth(app);
+  // useEffect(()=>{
+  //   //firebase call to check if auth is true
+  //   //if true, set signed in to be the object of the user signed in
+  //   //pass down entire signed in user (or maybe just the ID) to components that need authentication (profile, matches, EditUser, etc)
+  //   //if not, treat app like fresh, state is false, only have access to sign in/register
+  // })
   return (
-    <BrowserRouter>
-      <Nav />
+		<BrowserRouter>
+			<AuthProvider>
+				<Nav />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/myfoods" element={<FoodsPage />} />
-          <Route path="/users" element={<UserPage />} />
-          <Route path="/recipe" element={<Recipe />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/users/new" element={<NewUserPage />} />
-          <Route path="/users/:id" element={<ExpandedUser />} />
-          {/* <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} /> */}
-          <Route path="/users/:id/edit" element={<EditPage API={API} />} />
-          {/* <Route path="/users/:id" element={<></>} />//a show page, eventually */}
-        </Routes>
-        <Footer />
-        <ToastContainer />
-      </main>
-    </BrowserRouter>
+				<main>
+					<Routes>
+						<Route path="/" element={<HomePage />} />
+						<Route path="/myfoods" element={<FoodsPage />} />
+						<Route path="/users" element={<UserPage />} />
+						<Route path="/recipe" element={<Recipe />} />
+						<Route path="/about" element={<AboutPage />} />
+						<Route path="/register" element={<Register />} />
+						<Route path="/signin" element={<SignIn />} />
+						<Route path="/users/new" element={<NewUserPage />} />
+						<Route path="/users/:id" element={<ExpandedUser />} />
+						<Route path="/users/:id/edit" element={<EditPage API={API} />} />
+						{/* <Route path="/users/:id" element={<></>} />//a show page, eventually */}
+					</Routes>
+					<Footer />
+					<ToastContainer />
+				</main>
+			</AuthProvider>
+		</BrowserRouter>
   );
 }
 

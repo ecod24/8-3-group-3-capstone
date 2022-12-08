@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import {context} from "../AuthContext";
 
 export default function LikedPush({ likes }) {
+  const user = useContext(context);
   /* let { id } = useParams();
   const URL = process.env.REACT_APP_API_URL;
   const [aLike, Likes] = useState([]);

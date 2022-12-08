@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 // import {
 //   getFirestore,
 //   getMessaging,
@@ -34,5 +35,6 @@ const app = initializeApp(firebaseConfig);
 //   const messageList = messagesSnapshot.docs.map((doc) => doc.data());
 //   return messageList;
 // }
+export const auth = getAuth(app);
 
 export default app;
