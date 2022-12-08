@@ -1,8 +1,9 @@
 import UserProfile from "../Components/UserProfile.js";
 import Checklist from "../Components/Checklist.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {context} from "../AuthContext";
 
 /**
  * capitalizes first letter and no trailing spaces in string given.
@@ -44,6 +45,8 @@ export default function UserPage() {
 	const URL = process.env.REACT_APP_API_URL;
 	const [users, setUsers] = useState([]);
 	const [dietaryRestrictions, setDietaryResctrions] = useState([]);
+	const user = useContext(context);
+	
 	//let dietary_restrictions = ["Vegan", "Kosher"]; //a list of unique dietary restrictions to filter by.
 	// const uniqueRestrictions = () => {
 	// 	//make a list of unique restrictions to filter by.

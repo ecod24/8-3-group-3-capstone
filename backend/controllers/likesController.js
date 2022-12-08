@@ -54,7 +54,9 @@ likesController.get("/mutual", async (request, response) => {
 likesController.get("/matches", async (req, res) => {
 	//TODO: refactor to take code from mutual
 	//get those who liked user with id liked_id
-	const { liked_id } = req.body;
+	//const { liked_id } = req.body;
+	console.log(req.query);
+	const {liked_id}= req.query;
 	const match = await getMatches(liked_id);
 	if (match) {
 		res.status(200).json({
