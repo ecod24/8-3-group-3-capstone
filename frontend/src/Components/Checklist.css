@@ -1,15 +1,16 @@
 .filterbtn {
     padding-left: 50px;
-    column-count: 2;
+    column-count: 3;
     column-span: 1;
     justify-content: left;
+    text-align: center;
     float: left;
-    background-color: white;
+    background-color: #e14b5e;
 }
 
 #filterbox {
     display: grid;
-    column-count: 2;
+    column-count: 3;
     column-span: 1;
     justify-content: left;
     float: left;
