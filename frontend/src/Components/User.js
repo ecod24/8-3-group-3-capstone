@@ -1,4 +1,5 @@
 //Treating user image as a string since there are no images.
+//Merge Text
 import { Link } from 'react-router-dom';
 import LikedPush from './LikedPush';
 import { context } from '../AuthContext';
