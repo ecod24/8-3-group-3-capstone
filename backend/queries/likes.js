@@ -1,9 +1,9 @@
 const db = require("../db/dbConfig.js");
 
 //GET
-const getAllLikes = async () => {
+const getAllLikes = async (match_user_id) => {
 	try {
-		const allLikes = await db.any("SELECT * FROM likes");
+		const allLikes = await db.any("SELECT * FROM likes WHERE liker_id = $1", match_user_id);
 		return allLikes;
 	} catch (error) {
 		return error;
@@ -19,7 +19,7 @@ const getMatches = async (match_user_id) => {
 		);
 		return sendMatchRequest;
 	} catch (error) {
-		console.log("Error from sendMatchRequest query");
+		console.log("Error from sendMatchRequest query: ", error);
 	}
 };
 
