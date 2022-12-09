@@ -90,7 +90,7 @@ likesController.get("/:id", async (request, response) => {
 });
 
 likesController.delete("/", async (request, response) => {
-	const { liker_id, liked_id } = request.body;
+	const { liker_id, liked_id } = request.params;
 	const deletedLike = await deleteLike(liker_id, liked_id);
 	if (deletedLike) {
 		if (deletedLike.id) {
