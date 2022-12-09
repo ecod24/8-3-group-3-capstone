@@ -38,7 +38,7 @@ function App() {
 			<AuthProvider>
 				<Nav />
 
-				<main>
+				<main className="bg-beige">
 					<Routes>
 						<Route path="/" element={<HomePage />} />
 						<Route path="/myfoods" element={<FoodsPage />} />

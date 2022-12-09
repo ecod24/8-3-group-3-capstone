@@ -95,7 +95,7 @@ const NavBar = () => {
                 <Link to="/signin">
                   <img
                     alt="User_Authentication_LogOut"
-                    src={require("../Assets/turn-off.png")}
+                    src={require("../Assets/log-out.png")}
                   ></img>
                 </Link>
               ) : (

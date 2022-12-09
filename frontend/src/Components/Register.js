@@ -5,6 +5,7 @@ import { useState } from "react";
 import app from "../Firebase";
 import "../Styles/Register.css";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -80,45 +81,47 @@ export default function Register() {
   //   });
 
   return (
-    <div className="register mt-12 ">
-      <p className="font-fonts text-7xl font-semibold text-rose-700">
-        Sign Up Here
-      </p>
-      <p className="font-fonts text-3xl font-semibold text-rose-700">
-        Start finding your match!
-      </p>
-      <br></br>
-      <input
-        className="text-sm font-semibold inline-block py-4 px-5 text-pink-600 bg-white last:mr-0 mr-1"
-        type="text"
-        id="email"
-        placeholder="Email"
-        onChange={handleTextChange}
-      />
-      <br></br>
-      <input
-        className="text-sm font-semibold inline-block py-4 px-5 text-pink-600 bg-white last:mr-0 mr-1"
-        placeholder="Password"
-        type="password"
-        id="password"
-        onChange={handleTextChange}
-      />
-      <br></br>
-      <button
-        onClick={signUp}
-        className="registerbutton bg-logored text-white font-bold py-4 px-20 rounded-full"
-      >
-        Register
-      </button>
-      <p className="content-center font-fonts text-red">
-        Already have an account?{" "}
-        <Link className="underline text-logored" to="/signin">
-          click here!
+    <div className="bg-beige min-h-screen">
+      <div className="register py-12">
+        <p className="font-fonts text-7xl font-semibold text-rose-700">
+          Sign Up Here
+        </p>
+        <p className="font-fonts text-3xl font-semibold text-rose-700">
+          Start finding your match!
+        </p>
+        <br></br>
+        <input
+          className="text-sm font-semibold inline-block py-4 px-4 text-pink-600 bg-white last:mr-0 mr-1"
+          type="text"
+          id="email"
+          placeholder="Email"
+          onChange={handleTextChange}
+        />
+        <br></br>
+        <input
+          className="text-sm font-semibold inline-block py-4 px-4 text-pink-600 bg-white last:mr-0 mr-1"
+          placeholder="Password"
+          type="password"
+          id="password"
+          onChange={handleTextChange}
+        />
+        <br></br>
+        <button
+          onClick={signUp}
+          className="registerbutton bg-logored text-white font-bold py-4 px-20 rounded-full"
+        >
+          Register
+        </button>
+        <p className="content-center font-fonts text-red">
+          Already have an account?{" "}
+          <Link className="underline text-logored" to="/signin">
+            click here!
+          </Link>
+        </p>
+        <Link to="/">
+          <img alt="Back" src={require("../Assets/previous.png")} />
         </Link>
-      </p>
-      <Link to="/">
-        <img alt="Back" src={require("../Assets/previous.png")} />
-      </Link>
+      </div>
     </div>
   );
 }
