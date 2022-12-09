@@ -17,7 +17,7 @@ export default function EditableUserProfile() {
       .catch((err) => console.log(err.message.payload));
   }, [URL, id]);
 
-  console.log();
+
 
   return (
     <div className='min-h-screen'>
