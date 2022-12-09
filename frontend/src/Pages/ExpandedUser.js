@@ -21,7 +21,7 @@ export default function EditableUserProfile() {
 
   return (
     <div className='min-h-screen'>
-      <div className='flex flex-col md:flex-row  overflow-hidden shadow-lg border-double border-4 border-black-600 ...'>
+      <div className='flex flex-col md:flex-row  overflow-hidden shadow-lg  border-double border-4 border-black-600 ...'>
         <div class='h-240 w-auto md:w-1/2'>
           <img
             class='inset-0 h-240 w-full object-cover object-center border-dashed border-2 border-black-600 ... '
@@ -30,13 +30,13 @@ export default function EditableUserProfile() {
         </div>
         <div className='w-full py-4 px-6 text-gray-800 flex flex-col justify-between'>
           <Group>
-            <h2 className='font-semibold  text-lg leading-tight truncate '>
+            <h2 className='font-semibold  text-lg leading-tight truncate font-fonts text-red'>
               {info.name} , {info.age}
             </h2>{' '}
           </Group>
           <br />
           <Group>
-            <h2 className='font-semibold text-lg leading-tight truncate'>
+            <h2 className='font-semibold text-lg leading-tight truncate font-fonts text-red'>
               {info.email}
             </h2>{' '}
           </Group>
@@ -44,29 +44,30 @@ export default function EditableUserProfile() {
 
           <br />
           <Group>
-            <h2 className='font-semibold text-lg leading-tight truncate'>
+            <h2 className='font-semibold text-lg leading-tight truncate font-fonts text-red'>
               {info.sexual_orientation}, {info.gender}
             </h2>{' '}
           </Group>
           <br />
           <Group>
-            <h2 className='font-semibold text-lg leading-tight truncate'>
+            <h2 className='font-semibold text-lg leading-tight truncate font-fonts text-red'>
               {info.dietary_restrictions}
             </h2>
           </Group>
           <br />
           <Group>
-            <h2 className='font-semibold text-lg leading-tight truncate'>
+            <h2 className='font-semibold text-lg leading-tight truncate font-fonts text-red'>
               My Fav Foods: {info.food_preferences}
             </h2>{' '}
           </Group>
           <br />
 
           <Group>
-            <h2 className='font-semibold text-lg leading-tight truncate'>
+            <h2 className='font-semibold text-lg leading-tight truncate font-fonts text-red'>
               About Myself:
+              <br />
+              {info.about_me}
             </h2>{' '}
-            {info.about_me}
           </Group>
           <Group>
             <br />
@@ -85,7 +86,7 @@ export default function EditableUserProfile() {
         </div>
       </div>
       <Link to='/users'>
-        <button className='backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full'>
+        <button className='backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full '>
           Back to User Gallery
         </button>
       </Link>
