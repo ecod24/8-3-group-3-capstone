@@ -1,8 +1,8 @@
-import Home from '../Components/Home.js';
+import Home from "../Components/Home.js";
 
 export default function HomePage() {
   return (
-    <section>
+    <section className="py-0 mb-10">
       <Home />
     </section>
   );

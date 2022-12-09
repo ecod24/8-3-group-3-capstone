@@ -17,10 +17,10 @@ export default function EditableUserProfile() {
       .catch((err) => console.log(err.message.payload));
   }, [URL, id]);
 
-  console.log();
+
 
   return (
-    <div>
+    <div className='min-h-screen'>
       <div className='flex flex-col md:flex-row  overflow-hidden shadow-lg  border-double border-4 border-black-600 ...'>
         <div class='h-240 w-auto md:w-1/2'>
           <img
