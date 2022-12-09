@@ -1,49 +1,50 @@
 .NewUserDiv{
     border: 2px solid black;
+    display: grid;
+
+ 
 }
 
+
 .NewUserForm {
-    display: flex;
-    flex-direction: column;
-    /* align-items:  center; */
-    /* justify-content: center; */
+    
+    display: grid;
+    justify-content: end;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: center;
     margin-top: 1em;
 }
 
 #FormBlurb{
-    font-family: "Courier New";
+    
     font-weight: bold;
     text-align: center;
 }
-#submit{
-    color: white;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: #5D1744;
+#submit{  
     padding: 10px 10px;
     font-size: x-large;
 }
-#newUserSubmitBack{
-    color: white;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: #EABDDD;
-    padding: 10px 10px;
-    font-size: x-large;
+#submitBtn{
+    padding-left: 15px;
 }
+
 #buttonDiv{
     display: flex;
+    width: auto;
+    gap: auto;
     justify-content: center;
-    gap: 20px;
+    margin-top: 3em;
     margin-bottom: 5em;
 }
-#name, #image, #age, .emails, #Dietary_Restrictions,#Food_Restrictions, #sexual_orientation, #gender, #about_me, #chat_handle{
-    background-color: #5E1745;
-    text-align: center;
-    max-width: 80em;
+#NameLabel, #ImageLabel, #EmailLabel, #AgeLabel, #DietLabel, #FoodLabel, #SexLabel, #GenderLabel, #AboutLabel, #ChatLabel {
     margin-bottom: 1em;
-    margin-left: 11.7em;
+    margin-top: 1em;
+} 
+#name, #image, #age, .emails, #Dietary_Restrictions,#Food_Restrictions, #sexual_orientation, #gender, #about_me, #chat_handle{
+   background-color: white;
+    text-align: center;
+    max-width: 23.5em;
+    margin-bottom: 1em;
     margin-top: 1em;
 }
 

@@ -1,12 +1,22 @@
 #EditDiv{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
     border: 2px solid black;
+    display: grid;
 }
 #EditUserForm{
-    width: 100%;
+    display: grid;
+    justify-content: end;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    margin-top: 1em;
 }
-.EditInputForm{
-    width:100%;
+#NameLabel, #ImageLabel, #EmailLabel, #AgeLabel, #DietLabel, #FoodLabel, #SexLabel, #GenderLabel, #AboutLabel, #ChatLabel {
+    margin-bottom: 1em;
+    margin-top: 1em;
+} 
+#name, #image, #age, .emails, #Dietary_Restrictions,#food_preferences, #sexual_orientation, #gender, #about_me, #chat_handle{
+   background-color: white;
+    text-align: center;
+    max-width: 23.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
