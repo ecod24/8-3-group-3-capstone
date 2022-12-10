@@ -24,8 +24,8 @@ likesController.post("/", async (req, res) => {
 });
 
 likesController.get("/", async (request, response) => {
-	//TODO: refactor to take code from /matches
-	const allLikes = await getAllLikes();
+	const { liker_id } = req.query;
+	const allLikes = await getAllLikes(liker_id);
 	if (allLikes[0]) {
 		response.status(200).json({
 			success: true,
@@ -37,7 +37,7 @@ likesController.get("/", async (request, response) => {
 });
 
 likesController.get("/mutual", async (request, response) => {
-	const { user1, user2 } = request.body;
+	const { user1, user2 } = request.query;
 	const mutualLike = await getBidirectionalMatches(user1, user2);
 	if (mutualLike) {
 		response.status(200).json({
@@ -56,7 +56,7 @@ likesController.get("/matches", async (req, res) => {
 	//get those who liked user with id liked_id
 	//const { liked_id } = req.body;
 	console.log(req.query);
-	const {liked_id}= req.query;
+	const { liked_id } = req.query;
 	const match = await getMatches(liked_id);
 	if (match) {
 		res.status(200).json({
