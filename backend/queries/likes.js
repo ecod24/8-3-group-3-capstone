@@ -43,7 +43,7 @@ const getBidirectionalMatches = async (user1, user2) => {
 //GET:id
 const getLike = async (id) => {
 	try {
-		const like = await db.one("SELECT * FROM likes WHERE id=$1", id);
+		const like = await db.one("SELECT * FROM likes WHERE liked_id=$1", id);
 		return like;
 	} catch (error) {
 		return error;
