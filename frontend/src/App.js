@@ -21,6 +21,8 @@ import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import app from "./Firebase.js";
 import AuthProvider from "./AuthContext.js";
+import MatchesPage from "./Pages/MatchesPage.js";
+import Matches from "./Components/Matches.js";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -33,30 +35,31 @@ function App() {
   //   //pass down entire signed in user (or maybe just the ID) to components that need authentication (profile, matches, EditUser, etc)
   //   //if not, treat app like fresh, state is false, only have access to sign in/register
   // })
-  return (
-		<BrowserRouter>
-			<AuthProvider>
-				<Nav />
 
-				<main className="bg-beige">
-					<Routes>
-						<Route path="/" element={<HomePage />} />
-						<Route path="/myfoods" element={<FoodsPage />} />
-						<Route path="/users" element={<UserPage />} />
-						<Route path="/recipe" element={<Recipe />} />
-						<Route path="/about" element={<AboutPage />} />
-						<Route path="/register" element={<Register />} />
-						<Route path="/signin" element={<SignIn />} />
-						<Route path="/users/new" element={<NewUserPage />} />
-						<Route path="/users/:id" element={<ExpandedUser />} />
-						<Route path="/users/:id/edit" element={<EditPage API={API} />} />
-						{/* <Route path="/users/:id" element={<></>} />//a show page, eventually */}
-					</Routes>
-					<Footer />
-					<ToastContainer />
-				</main>
-			</AuthProvider>
-		</BrowserRouter>
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <Nav />
+        <main className="bg-beige">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/myfoods" element={<FoodsPage />} />
+            <Route path="/users" element={<UserPage />} />
+            <Route path="/recipe" element={<Recipe />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/users/new" element={<NewUserPage />} />
+            <Route path="/users/:id" element={<ExpandedUser />} />
+            <Route path="/users/:id/edit" element={<EditPage API={API} />} />
+            <Route path="/likes" element={<Matches />} />
+            {/* <Route path="/users/:id" element={<></>} />//a show page, eventually */}
+          </Routes>
+          <Footer />
+          <ToastContainer />
+        </main>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
