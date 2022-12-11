@@ -1,16 +1,15 @@
 #UserDiv{
-    transition: transform .3s ease-in-out;
     /* margin-left: 370px; */
     margin-top: 15px;
-    margin-bottom: 15px;
-}
-#UserDiv:hover {
-    transform: scale(1.05)
+    margin-bottom: 60px;
+    border: solid 0.2em #4B1E7F;
+    background-color: #DAE3C9;
 }
 
 #UserImage{
     height: 350px;
     width: 350px;
     padding:10px;
+    /* border: solid 2px black; */
    
 }
