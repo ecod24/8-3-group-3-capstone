@@ -24,7 +24,7 @@ likesController.post("/", async (req, res) => {
 });
 
 likesController.get("/", async (request, response) => {
-	const { liker_id } = req.query;
+	const { liker_id } = request.query;
 	const allLikes = await getAllLikes(liker_id);
 	if (allLikes[0]) {
 		response.status(200).json({
@@ -42,7 +42,7 @@ likesController.get("/mutual", async (request, response) => {
 	if (mutualLike) {
 		response.status(200).json({
 			success: true,
-			payload: `User with ID${user1} and ID ${user2} are a match!`,
+			payload: mutualLike,
 		});
 	} else {
 		response.status(404).json({
