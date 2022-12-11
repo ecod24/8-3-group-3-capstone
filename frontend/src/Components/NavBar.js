@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import "../App.css";
 import { useState } from "react";
 
-let userSignedIn = true;
-
-const NavBar = () => {
+const NavBar = ({ loggedIn, logOut }) => {
   const [isHovering, setIsHovering] = useState(false);
-
+  const navigate = useNavigate();
   const handleMouseOver = () => {
     setIsHovering(true);
   };
@@ -39,7 +37,7 @@ const NavBar = () => {
         </Link>
         {/* Navbar Routes*/}
         <div className="hidden md:flex space-x-40 pr-30 text-2xl">
-          <div className={"space-x-40 " + (userSignedIn ? "show" : "hidden")}>
+          <div className={"space-x-40 " + (loggedIn ? "show" : "hidden")}>
             <Link className="hover:text-red-800" to="/users">
               <button>
                 <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
@@ -91,9 +89,12 @@ const NavBar = () => {
           </div>
           <Link className="hover:text-red-800">
             <button>
-              {userSignedIn ? (
+              {loggedIn ? (
                 <Link to="/signin">
                   <img
+                    onClick={() => {
+                      logOut();
+                    }}
                     alt="User_Authentication_LogOut"
                     src={require("../Assets/log-out.png")}
                   ></img>
@@ -139,7 +140,7 @@ const NavBar = () => {
             My Profile
           </a>
           <a href="/" className="text-logored">
-            {userSignedIn ? "Sign Out" : "Sign In"}
+            {loggedIn ? "Sign Out" : "Sign In"}
           </a>
         </div>
       </div>
