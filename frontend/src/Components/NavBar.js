@@ -57,7 +57,7 @@ const NavBar = () => {
                 </div>
               </button>
             </Link>
-            <Link className="hover:text-red-800" to="/likes">
+            <Link className="hover:text-red-800" to="/matches">
               <button>
                 <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                   <img

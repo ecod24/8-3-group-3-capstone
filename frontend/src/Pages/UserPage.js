@@ -1,9 +1,9 @@
 import UserProfile from "../Components/UserProfile.js";
 import Checklist from "../Components/Checklist.js";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import {context} from "../AuthContext";
+import { context } from "../AuthContext";
 
 /**
  * capitalizes first letter and no trailing spaces in string given.
@@ -40,13 +40,12 @@ const normalizeListOfWords = (words) => {
 	// join normalized words in a comma separated string and return
 };
 
-export default function UserPage() {
+export default function UserPage({ user }) {
 	const [currentFilter, setCurrentFilter] = useState("");
 	const URL = process.env.REACT_APP_API_URL;
 	const [users, setUsers] = useState([]);
 	const [dietaryRestrictions, setDietaryResctrions] = useState([]);
-	const user = useContext(context);
-	
+
 	//let dietary_restrictions = ["Vegan", "Kosher"]; //a list of unique dietary restrictions to filter by.
 	// const uniqueRestrictions = () => {
 	// 	//make a list of unique restrictions to filter by.
@@ -75,7 +74,7 @@ export default function UserPage() {
 	return (
 		<section>
 			<Checklist setCurrentFilter={setCurrentFilter} restrictions={dietaryRestrictions} />
-			<UserProfile currentFilter={currentFilter} users={users} />
+			<UserProfile user={user} currentFilter={currentFilter} users={users} />
 			<Link to="/">
 				<button className="backbutton bg-rose-500 text-white font-bold py-4 px-20 rounded-full">
 					Back to Home Page
