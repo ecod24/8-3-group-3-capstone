@@ -34,7 +34,7 @@ const getBidirectionalMatches = async (user1, user2) => {
 			user2,
 			user1,
 		]);
-		return { forwardMatch, reverseMatch };
+		return await db.one("SELECT * FROM users WHERE id=$1", user2);
 	} catch (error) {
 		console.log("This is not a bidrectional match. Try another pair of users.");
 	}
