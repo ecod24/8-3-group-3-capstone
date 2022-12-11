@@ -6,19 +6,19 @@ import User from './User';
 import '../Styles/UserProfiles.css';
 import LikedPush from './LikedPush';
 
-export default function UserProfile({ currentFilter, users }) {
+export default function UserProfile({ currentFilter, users, user }) {
   return (
     <div className='UserGallery bg-beige'>
       {users
-        .filter((user) => {
+        .filter((u) => {
           if (!currentFilter) {
             return true;
           } else {
-            return user.dietary_restrictions.includes(currentFilter);
+            return u.dietary_restrictions.includes(currentFilter);
           }
         })
-        .map((user) => {
-          return <User info={user} key={`${user.id}-${user.name}`} />;
+        .map((u) => {
+          return <User info={u} key={`${u.id}-${u.name}`} signedInUser={user} />;
         })}
     </div>
   );
