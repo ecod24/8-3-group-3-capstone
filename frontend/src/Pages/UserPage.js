@@ -73,10 +73,10 @@ export default function UserPage({ user }) {
 
   return (
     <section>
-      <Checklist
+      {/* <Checklist
         setCurrentFilter={setCurrentFilter}
         restrictions={dietaryRestrictions}
-      />
+      /> */}
       <UserProfile user={user} currentFilter={currentFilter} users={users} />
       <Link to="/">
         <img src={require("../Assets/previous.png")} alt="Back" />
